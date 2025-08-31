@@ -1,6 +1,6 @@
-# Academic Website v2
+# Academic Website
 
-Minimal professional academic website with photo support and flexible color scheme for GitHub Pages.
+Minimal academic website with photo support and flexible color scheme for GitHub Pages.
 
 ## Setup
 
