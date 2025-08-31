@@ -29,3 +29,20 @@ footer { background: #fafafa; color: var(--primary-color); text-align: center; p
 .about-me .about-text {
   flex: 1; /* takes the remaining space */
 }
+
+/* All links in main content */
+main a {
+  color: var(--accent-color);  /* use your accent color */
+  text-decoration: none;        /* remove underline */
+}
+
+/* Hover state */
+main a:hover {
+  color: #2C7A7B;   /* slightly darker shade for hover */
+  text-decoration: underline;   /* show underline on hover */
+}
+
+/* Visited links */
+main a:visited {
+  color: #9F7AEA;   /* optional different color for visited links */
+}
