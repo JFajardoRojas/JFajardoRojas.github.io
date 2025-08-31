@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Publications — Fernando Fajardo</title>
+  <meta name="description" content="Academic website of Fernando Fajardo: computational materials science, machine learning for MOFs, fluid-fluid interfaces." />
+  <meta name="author" content="Fernando Fajardo" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Publications — Fernando Fajardo" />
+  <meta property="og:description" content="Computational materials science, ML for MOFs, and experimental design of fluid interfaces." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://example.com/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" href="/assets/favicon.ico" />
+  <link rel="stylesheet" href="/assets/style.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Fernando Fajardo",
+    "jobTitle": "Computational Materials Scientist",
+    "url": "https://your-domain-or-username.github.io/",
+    "affiliation": {"@type":"Organization","name":"Colorado School of Mines"},
+    "sameAs": [
+      "https://scholar.google.com/",
+      "https://orcid.org/",
+      "https://www.semanticscholar.org/",
+      "https://www.linkedin.com/"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/"><span class="brand-mark">FF</span> <span class="brand-text">Fernando Fajardo</span></a>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/research.html">Research</a></li>
+          <li><a href="/publications.html">Publications</a></li>
+          <li><a href="/teaching.html">Teaching</a></li>
+          <li><a href="/cv/Fajardo_CV.pdf" rel="noopener">CV</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="content" class="container">
+
+  <h1>Publications</h1>
+  <p>Selected publications below. See Google Scholar for a complete list.</p>
+  <div id="pubs"></div>
+
+  <script>
+    function renderPubs(list) {
+      const container = document.getElementById('pubs');
+      container.innerHTML = list.map(p => `
+        <article class="pub">
+          <h3 class="pub-title">${p.title}</h3>
+          <p class="pub-authors">${p.authors}</p>
+          <p class="pub-venue">${p.venue} (${p.year})</p>
+          <p class="pub-extras">
+            ${p.doi ? `<a href="${p.doi}" rel="noopener">DOI</a>`:''}
+            ${p.arxiv ? `<a href="${p.arxiv}" rel="noopener">arXiv</a>`:''}
+            ${p.pdf ? `<a href="${p.pdf}" rel="noopener">PDF</a>`:''}
+            ${p.code ? `<a href="${p.code}" rel="noopener">Code</a>`:''}
+          </p>
+        </article>
+      `).join('');
+    }
+
+    fetch('/assets/publications.json')
+      .then(r => r.json())
+      .then(renderPubs)
+      .catch(() => {
+        document.getElementById('pubs').innerHTML = '<p>Add entries to assets/publications.json</p>';
+      });
+  </script>
+
+  </main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Fernando Fajardo · <a href="/sitemap.xml">Sitemap</a></p>
+      <p class="tiny">This site is open-source on GitHub Pages.</p>
+    </div>
+  </footer>
+</body>
+</html>
