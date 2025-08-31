@@ -45,4 +45,5 @@ main a:hover {
 /* Visited links */
 main a:visited {
   color: var(--accent-color);   /* optional different color for visited links */
+  text-decoration: none;
 }
