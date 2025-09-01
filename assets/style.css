@@ -91,7 +91,7 @@ main a:visited {
 }
 
 .research img {
-  width: 150px;   /* keep small */
+  width: 250px;   /* keep small */
   height: auto;
   border-radius: 8px;
   margin-right: 1em;  /* space between image and text */
