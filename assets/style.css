@@ -82,3 +82,20 @@ main a:visited {
   font-size: 0.95em;
   color: #444;
 }
+
+.research {
+  display: flex;
+  align-items: center;
+  margin: 2em 0;
+}
+
+.research img {
+  width: 250px;   /* adjust size */
+  height: auto;
+  border-radius: 10px;
+  margin-right: 1.5em;
+}
+
+.research-text {
+  flex: 1;
+}
