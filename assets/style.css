@@ -85,19 +85,19 @@ main a:visited {
 
 .research {
   display: flex;
-  align-items: flex-start;  /* align top edges */
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin: 2em 0;
+}
+
+.research img {
+  width: 150px;   /* keep small */
+  height: auto;
+  border-radius: 8px;
+  margin-right: 1em;  /* space between image and text */
 }
 
 .research-text {
   flex: 1;
-  margin-right: 1em;  /* spacing between text and image */
-}
-
-.research img {
-  width: 250px;   /* small size */
-  height: auto;
-  border-radius: 8px;
 }
 
