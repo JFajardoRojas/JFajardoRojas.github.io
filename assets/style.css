@@ -47,3 +47,38 @@ main a:visited {
   color: var(--accent-color);   /* optional different color for visited links */
   text-decoration: none;
 }
+
+.education {
+  font-family: Arial, sans-serif;
+  line-height: 1.4;
+}
+
+.education h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 0.2em;
+}
+
+.degree {
+  margin-bottom: 1.5em;
+}
+
+.degree h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #333;
+}
+
+.degree .school {
+  font-style: italic;
+  color: #555;
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.degree .details {
+  margin-left: 1em;
+  font-size: 0.95em;
+  color: #444;
+}
