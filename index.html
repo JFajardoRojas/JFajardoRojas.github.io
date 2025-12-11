@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="J. Fernando Fajardo-Rojas - Postdoctoral Researcher in Computational Materials Science and AI/ML for Materials Discovery">
+    <meta name="keywords" content="materials science, machine learning, AI, MOF, computational chemistry, Colorado School of Mines">
+    <meta name="author" content="J. Fernando Fajardo-Rojas">
+    
+    <title>J. Fernando Fajardo-Rojas | Computational Materials Scientist</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-gradient"></div>
+        <canvas id="particles-canvas"></canvas>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-bracket">&lt;</span>JFR<span class="logo-bracket">/&gt;</span>
+            </a>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#research" class="nav-link">Research</a></li>
+                <li><a href="#publications" class="nav-link">Publications</a></li>
+                <li><a href="#cv" class="nav-link">CV</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <p class="hero-greeting reveal-up">Hello, I'm</p>
+                <h1 class="hero-name reveal-up delay-1">
+                    <span class="name-first">Fernando</span>
+                    <span class="name-last">Fajardo-Rojas</span>
+                </h1>
+                <div class="hero-title reveal-up delay-2">
+                    <span class="title-line"></span>
+                    <p>Postdoctoral Researcher</p>
+                    <span class="title-line"></span>
+                </div>
+                <p class="hero-tagline reveal-up delay-3">
+                    Computational Materials Science <span class="separator">•</span> 
+                    AI/ML for Materials <span class="separator">•</span> 
+                    Autonomous Discovery
+                </p>
+                <div class="hero-cta reveal-up delay-4">
+                    <a href="#research" class="btn btn-primary">
+                        <span>Explore My Research</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+            <div class="hero-visual reveal-scale delay-2">
+                <div class="profile-frame">
+                    <div class="profile-glow"></div>
+                    <img src="assets/images/profile.jpg" alt="J. Fernando Fajardo-Rojas" class="profile-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 200%22><rect fill=%22%231a1a2e%22 width=%22200%22 height=%22200%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%2300d4aa%22 font-size=%2260%22 font-family=%22system-ui%22>JFR</text></svg>'">
+                    <div class="profile-border"></div>
+                </div>
+                <div class="floating-badges">
+                    <span class="badge badge-1">🔬 Materials</span>
+                    <span class="badge badge-2">🤖 AI/ML</span>
+                    <span class="badge badge-3">⚡ Energy</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="container">
+            <h2 class="section-title reveal-up">
+                <span class="title-number">01.</span>
+                About Me
+            </h2>
+            
+            <div class="about-content">
+                <div class="about-text reveal-up delay-1">
+                    <p class="about-intro">
+                        I am a <strong>postdoctoral researcher</strong> at the <strong>Colorado School of Mines</strong>, 
+                        working in the <a href="https://www.tobererlab.com/" target="_blank" rel="noopener">Toberer Group</a>.
+                    </p>
+                    <p>
+                        I earned a PhD in Materials Science from Mines in 2025 under the guidance of 
+                        <a href="https://www.mines.edu/cbe/project/diego-gomez-gualdron/" target="_blank" rel="noopener">Diego Gómez-Gualdrón</a>, 
+                        where I developed computational workflows to accelerate the discovery of new materials 
+                        for energy-related applications.
+                    </p>
+                    <p>
+                        Previously, I received a PhD in Engineering from <strong>Universidad de los Andes</strong> in Colombia, 
+                        where I worked with Oscar Alvarez and Diego Pradilla on the experimental characterization 
+                        of interfacial phenomena.
+                    </p>
+                    
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🎓</span>
+                            <div>
+                                <strong>Dual PhD</strong>
+                                <p>Materials Science & Engineering</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🔬</span>
+                            <div>
+                                <strong>Research Focus</strong>
+                                <p>AI-driven materials discovery</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <span class="highlight-icon">🌎</span>
+                            <div>
+                                <strong>International</strong>
+                                <p>Colombia → USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-vision reveal-up delay-2">
+                    <div class="vision-card">
+                        <div class="vision-header">
+                            <span class="vision-icon">💡</span>
+                            <h3>My Vision</h3>
+                        </div>
+                        <p>
+                            I envision a future where <strong>AI-powered tools</strong> unlock the potential of 
+                            <strong>autonomous experimentation</strong> to dramatically accelerate the design 
+                            cycle of functional materials—transforming how we discover solutions for 
+                            energy, sustainability, and beyond.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="section research">
+        <div class="container">
+            <h2 class="section-title reveal-up">
+                <span class="title-number">02.</span>
+                Research
+            </h2>
+            
+            <p class="section-intro reveal-up delay-1">
+                My research focuses on harnessing the power of <strong>Artificial Intelligence and Machine Learning</strong> 
+                in fields where data is scarce or costly.
+            </p>
+            
+            <div class="research-grid">
+                <article class="research-card reveal-up delay-1">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                    </div>
+                    <h3>Physico-Chemical Material Representations</h3>
+                    <p>
+                        Integrating domain knowledge and physico-chemical insights into material 
+                        representations to build more robust and interpretable ML models.
+                    </p>
+                    <div class="card-tags">
+                        <span>Feature Engineering</span>
+                        <span>Domain Knowledge</span>
+                    </div>
+                </article>
+                
+                <article class="research-card reveal-up delay-2">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"></circle>
+                            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+                        </svg>
+                    </div>
+                    <h3>Transfer & Active Learning</h3>
+                    <p>
+                        Developing advanced training techniques to minimize the need for large labeled 
+                        datasets—crucial for materials science where data generation is expensive.
+                    </p>
+                    <div class="card-tags">
+                        <span>Transfer Learning</span>
+                        <span>Active Learning</span>
+                    </div>
+                </article>
+                
+                <article class="research-card reveal-up delay-3">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                            <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                        </svg>
+                    </div>
+                    <h3>Interpretable AI Models</h3>
+                    <p>
+                        Creating models that uncover structure–property relationships, translating 
+                        data into actionable insights for hypothesis-driven materials design.
+                    </p>
+                    <div class="card-tags">
+                        <span>Explainable AI</span>
+                        <span>Structure-Property</span>
+                    </div>
+                </article>
+                
+                <article class="research-card reveal-up delay-4">
+                    <div class="card-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                            <rect x="9" y="9" width="6" height="6"></rect>
+                            <line x1="9" y1="1" x2="9" y2="4"></line>
+                            <line x1="15" y1="1" x2="15" y2="4"></line>
+                            <line x1="9" y1="20" x2="9" y2="23"></line>
+                            <line x1="15" y1="20" x2="15" y2="23"></line>
+                            <line x1="20" y1="9" x2="23" y2="9"></line>
+                            <line x1="20" y1="14" x2="23" y2="14"></line>
+                            <line x1="1" y1="9" x2="4" y2="9"></line>
+                            <line x1="1" y1="14" x2="4" y2="14"></line>
+                        </svg>
+                    </div>
+                    <h3>Autonomous Materials Discovery</h3>
+                    <p>
+                        Building tools that enable autonomous experimentation to accelerate 
+                        the design cycle of functional materials for energy applications.
+                    </p>
+                    <div class="card-tags">
+                        <span>Automation</span>
+                        <span>High-Throughput</span>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="section publications">
+        <div class="container">
+            <h2 class="section-title reveal-up">
+                <span class="title-number">03.</span>
+                Publications
+            </h2>
+            
+            <div class="publications-filter reveal-up delay-1">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="2025">2025</button>
+                <button class="filter-btn" data-filter="2024">2024</button>
+                <button class="filter-btn" data-filter="2023">2023</button>
+                <button class="filter-btn" data-filter="earlier">Earlier</button>
+            </div>
+            
+            <div class="publications-list">
+                <!-- 2025 Publications -->
+                <article class="publication-item reveal-up" data-year="2025">
+                    <div class="pub-year">2025</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">Expert-Guided LLM Approach for Sequence-Aware Extraction of MOF Synthesis</h3>
+                        <p class="pub-authors">
+                            X. Zhao, <strong>J.F. Fajardo-Rojas</strong>, J. Furst, K. Ardila, K. Langlois, Y. An, X. Hu, F. Uribe-Romo, D. Gómez-Gualdrón, J. Greenberg
+                        </p>
+                        <p class="pub-venue">ChemRxiv (Preprint)</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Paper
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Placeholder publications - Add your actual publications here -->
+                <article class="publication-item reveal-up" data-year="2024">
+                    <div class="pub-year">2024</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">[Your Publication Title Here]</h3>
+                        <p class="pub-authors">
+                            [Authors including <strong>J.F. Fajardo-Rojas</strong>]
+                        </p>
+                        <p class="pub-venue">[Journal Name, Volume, Pages]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Paper
+                            </a>
+                            <a href="#" class="pub-link" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                                </svg>
+                                Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="publication-item reveal-up" data-year="2023">
+                    <div class="pub-year">2023</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">[Your Publication Title Here]</h3>
+                        <p class="pub-authors">
+                            [Authors including <strong>J.F. Fajardo-Rojas</strong>]
+                        </p>
+                        <p class="pub-venue">[Journal Name, Volume, Pages]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Paper
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="publication-item reveal-up" data-year="earlier">
+                    <div class="pub-year">2022</div>
+                    <div class="pub-content">
+                        <h3 class="pub-title">[Your Earlier Publication Title]</h3>
+                        <p class="pub-authors">
+                            [Authors including <strong>J.F. Fajardo-Rojas</strong>]
+                        </p>
+                        <p class="pub-venue">[Journal Name, Volume, Pages]</p>
+                        <div class="pub-links">
+                            <a href="#" class="pub-link" target="_blank" rel="noopener">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                    <polyline points="15 3 21 3 21 9"></polyline>
+                                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                                </svg>
+                                Paper
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="publications-cta reveal-up">
+                <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener" class="btn btn-outline">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+                    </svg>
+                    View All on Google Scholar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Section -->
+    <section id="cv" class="section cv">
+        <div class="container">
+            <h2 class="section-title reveal-up">
+                <span class="title-number">04.</span>
+                Curriculum Vitae
+            </h2>
+            
+            <div class="cv-content">
+                <div class="cv-timeline reveal-up delay-1">
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2025 – Present</span>
+                            <h3>Postdoctoral Researcher</h3>
+                            <p class="timeline-org">Colorado School of Mines • Toberer Group</p>
+                            <p>AI/ML for materials discovery and autonomous experimentation</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020 – 2025</span>
+                            <h3>PhD in Materials Science</h3>
+                            <p class="timeline-org">Colorado School of Mines</p>
+                            <p>Advisor: Diego Gómez-Gualdrón<br>
+                            Focus: Computational workflows for materials discovery</p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">Earlier</span>
+                            <h3>PhD in Engineering</h3>
+                            <p class="timeline-org">Universidad de los Andes, Colombia</p>
+                            <p>Advisors: Oscar Alvarez & Diego Pradilla<br>
+                            Focus: Experimental characterization of interfacial phenomena</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="cv-download reveal-up delay-2">
+                    <div class="download-card">
+                        <div class="download-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="12" y1="18" x2="12" y2="12"></line>
+                                <polyline points="9 15 12 18 15 15"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Download Full CV</h3>
+                        <p>Get the complete curriculum vitae with full publication list, presentations, and awards.</p>
+                        <a href="docs/cv.pdf" class="btn btn-primary" download>
+                            <span>Download PDF</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                <polyline points="7 10 12 15 17 10"></polyline>
+                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2 class="section-title reveal-up">
+                <span class="title-number">05.</span>
+                Get in Touch
+            </h2>
+            
+            <p class="section-intro reveal-up delay-1">
+                Interested in collaboration, have questions about my research, or just want to connect? 
+                I'd love to hear from you.
+            </p>
+            
+            <div class="contact-content">
+                <div class="contact-info reveal-up delay-2">
+                    <div class="contact-card">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                    <polyline points="22,6 12,13 2,6"></polyline>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <a href="mailto:your.email@mines.edu">your.email@mines.edu</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <p>Colorado School of Mines<br>Golden, CO, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener" class="social-link" aria-label="Google Scholar">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+                            </svg>
+                        </a>
+                        <a href="https://orcid.org/YOUR_ORCID" target="_blank" rel="noopener" class="social-link" aria-label="ORCID">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/jfajardorojas" target="_blank" rel="noopener" class="social-link" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="https://twitter.com/YOUR_TWITTER" target="_blank" rel="noopener" class="social-link" aria-label="Twitter/X">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="contact-message reveal-up delay-3">
+                    <a href="mailto:your.email@mines.edu" class="btn btn-primary btn-large">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Send me an Email</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="logo-bracket">&lt;</span>JFR<span class="logo-bracket">/&gt;</span>
+                    <p>Computational Materials Scientist</p>
+                </div>
+                
+                <nav class="footer-nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#research">Research</a>
+                    <a href="#publications">Publications</a>
+                    <a href="#cv">CV</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+                
+                <div class="footer-social">
+                    <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener" aria-label="Google Scholar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/jfajardorojas" target="_blank" rel="noopener" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                        </svg>
+                    </a>
+                    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 J. Fernando Fajardo-Rojas. All rights reserved.</p>
+                <p>Built with passion for science and design.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
+
