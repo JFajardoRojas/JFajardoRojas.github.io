@@ -10,33 +10,8 @@ const navbar = document.getElementById('navbar');
 const hamburger = document.getElementById('hamburger');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-link');
-const themeToggle = document.getElementById('theme-toggle');
 const filterBtns = document.querySelectorAll('.filter-btn');
 const publicationItems = document.querySelectorAll('.publication-item');
-const particlesCanvas = document.getElementById('particles-canvas');
-
-// ============================================
-// Theme Toggle
-// ============================================
-function initTheme() {
-    // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    document.documentElement.setAttribute('data-theme', savedTheme);
-}
-
-function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    
-    document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme);
-    
-    // Reinitialize particles with new colors
-    initParticles();
-}
-
-themeToggle.addEventListener('click', toggleTheme);
-initTheme();
 
 // ============================================
 // Navigation
@@ -176,111 +151,6 @@ style.textContent = `
 document.head.appendChild(style);
 
 // ============================================
-// Particles Background
-// ============================================
-function initParticles() {
-    if (!particlesCanvas) return;
-    
-    const ctx = particlesCanvas.getContext('2d');
-    let particles = [];
-    let animationId;
-    
-    // Cancel any existing animation
-    if (animationId) {
-        cancelAnimationFrame(animationId);
-    }
-    
-    // Set canvas size
-    function resizeCanvas() {
-        particlesCanvas.width = window.innerWidth;
-        particlesCanvas.height = window.innerHeight;
-    }
-    
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-    
-    // Get theme-aware colors
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const particleColor = isDark ? 'rgba(0, 212, 170, 0.5)' : 'rgba(5, 150, 105, 0.4)';
-    const lineColor = isDark ? 'rgba(0, 212, 170, 0.15)' : 'rgba(5, 150, 105, 0.1)';
-    
-    // Particle class
-    class Particle {
-        constructor() {
-            this.x = Math.random() * particlesCanvas.width;
-            this.y = Math.random() * particlesCanvas.height;
-            this.vx = (Math.random() - 0.5) * 0.5;
-            this.vy = (Math.random() - 0.5) * 0.5;
-            this.radius = Math.random() * 2 + 1;
-        }
-        
-        update() {
-            this.x += this.vx;
-            this.y += this.vy;
-            
-            // Wrap around edges
-            if (this.x < 0) this.x = particlesCanvas.width;
-            if (this.x > particlesCanvas.width) this.x = 0;
-            if (this.y < 0) this.y = particlesCanvas.height;
-            if (this.y > particlesCanvas.height) this.y = 0;
-        }
-        
-        draw() {
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-            ctx.fillStyle = particleColor;
-            ctx.fill();
-        }
-    }
-    
-    // Create particles
-    const particleCount = Math.min(80, Math.floor((window.innerWidth * window.innerHeight) / 15000));
-    particles = [];
-    
-    for (let i = 0; i < particleCount; i++) {
-        particles.push(new Particle());
-    }
-    
-    // Draw connections
-    function drawConnections() {
-        for (let i = 0; i < particles.length; i++) {
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < 150) {
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = lineColor;
-                    ctx.lineWidth = 1 - distance / 150;
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-    
-    // Animation loop
-    function animate() {
-        ctx.clearRect(0, 0, particlesCanvas.width, particlesCanvas.height);
-        
-        particles.forEach(particle => {
-            particle.update();
-            particle.draw();
-        });
-        
-        drawConnections();
-        animationId = requestAnimationFrame(animate);
-    }
-    
-    animate();
-}
-
-// Initialize particles
-initParticles();
-
-// ============================================
 // Typing Effect for Hero (Optional)
 // ============================================
 function typeWriter(element, text, speed = 50) {
@@ -333,11 +203,6 @@ document.querySelectorAll('.reveal-up, .reveal-scale').forEach(el => {
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
 if (prefersReducedMotion.matches) {
-    // Disable particles
-    if (particlesCanvas) {
-        particlesCanvas.style.display = 'none';
-    }
-    
     // Remove animation delays
     document.querySelectorAll('[class*="delay-"]').forEach(el => {
         el.style.transitionDelay = '0s';
@@ -365,7 +230,7 @@ Looking to collaborate? Let's connect!
 `, 
 'font-size: 16px; font-weight: bold;',
 'font-size: 12px;',
-'font-size: 12px; color: #00d4aa;'
+'font-size: 12px; color: #1a4480;'
 );
 
 // ============================================
