@@ -2,13 +2,17 @@
 <html lang="en">
 {% include head.html %}
 <body>
+    <div class="topbar">
+        <button id="burger" aria-label="Toggle menu">☰</button>
+        <span class="sb-logo"><span class="br">&lt;</span>JFR<span class="br">/&gt;</span></span>
+    </div>
+
     {% include nav.html %}
 
     {{ content }}
 
     {% include footer.html %}
 
-    <!-- Scripts -->
     <script src="{{ '/js/main.js' | relative_url }}"></script>
 </body>
 </html>

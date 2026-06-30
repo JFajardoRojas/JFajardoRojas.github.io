@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preview — Lab site + Editorial blog</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#0c0f14;--bg-2:#11151c;--panel:#151b24;--panel-2:#1b222d;--txt:#e7ecf3;--txt-soft:#9aa7b8;--muted:#637087;--line:#222c39;--accent:#46e0c0;--accent-2:#5b8cff;--warn:#ffb454;--sans:"Inter",sans-serif;--mono:"JetBrains Mono",monospace;--display:"Fraunces",serif;--serif:"Source Serif 4",Georgia,serif;--side:248px}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--txt);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;background-image:radial-gradient(circle at 18% -5%,rgba(91,140,255,.07),transparent 42%),radial-gradient(circle at 95% 105%,rgba(70,224,192,.06),transparent 42%);background-attachment:fixed;min-height:100vh}
+  a{color:inherit;text-decoration:none}
+  .sidebar{position:fixed;top:0;left:0;bottom:0;width:var(--side);z-index:30;border-right:1px solid var(--line);background:linear-gradient(180deg,var(--bg-2),var(--bg));padding:1.6rem 1.1rem;display:flex;flex-direction:column;gap:1.3rem}
+  .sb-logo{font-family:var(--mono);font-weight:700;font-size:1.05rem}.sb-logo .br{color:var(--accent)}
+  .sb-who{font-size:.82rem;color:var(--txt-soft)}.sb-who b{color:var(--txt);display:block;font-size:.92rem}
+  .sb-nav{display:flex;flex-direction:column;gap:.12rem;margin-top:.2rem}
+  .sb-nav button{display:flex;align-items:center;gap:.7rem;background:none;border:none;cursor:pointer;color:var(--txt-soft);font-family:var(--sans);font-size:.92rem;text-align:left;padding:.55rem .7rem;border-radius:9px}
+  .sb-nav button .ix{font-family:var(--mono);font-size:.7rem;color:var(--muted)}
+  .sb-nav button:hover{background:var(--panel);color:var(--txt)}
+  .sb-nav button.active{background:var(--panel-2);color:var(--txt);box-shadow:inset 2px 0 0 var(--accent)}
+  .sb-nav button.active .ix{color:var(--accent)}
+  .sb-foot{margin-top:auto;font-family:var(--mono);font-size:.68rem;color:var(--muted)}
+  .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 8px var(--accent);margin-right:.4rem}
+  .main{margin-left:var(--side);padding:2.6rem clamp(1.4rem,4vw,3.6rem) 3rem;max-width:1120px}
+  .view{display:none;animation:fade .4s ease}.view.active{display:block}
+  #post.active{display:flex}
+  @keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .crumb{font-family:var(--mono);font-size:.74rem;color:var(--muted);margin-bottom:1.3rem}.crumb b{color:var(--accent)}
+  .title{font-size:clamp(1.9rem,4vw,2.9rem);font-weight:700;letter-spacing:-.02em;line-height:1.05;margin-bottom:.7rem}
+  .lead{color:var(--txt-soft);font-size:1.1rem;max-width:64ch}
+  .tag{font-family:var(--mono);font-size:.78rem;color:var(--accent);margin-bottom:1rem}
+  .grad{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero h1{font-size:clamp(2.3rem,6vw,4rem);font-weight:700;letter-spacing:-.03em;line-height:1.02}
+  .hero p{color:var(--txt-soft);font-size:1.15rem;max-width:56ch;margin:1.2rem 0 1.8rem}
+  .btns{display:flex;gap:.8rem;flex-wrap:wrap}
+  .btn{font-family:var(--mono);font-size:.85rem;padding:.7rem 1.1rem;border-radius:9px;border:1px solid var(--line);background:var(--panel);cursor:pointer;color:var(--txt)}
+  .btn.solid{background:var(--accent);color:#06211b;border-color:var(--accent);font-weight:600}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:2.4rem}
+  .stat{border:1px solid var(--line);border-radius:12px;padding:1.1rem;background:linear-gradient(180deg,var(--panel),transparent)}
+  .stat .n{font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--accent)}.stat .l{font-size:.82rem;color:var(--txt-soft)}
+  .sec-label{font-family:var(--mono);font-size:.74rem;color:var(--muted);text-transform:uppercase;letter-spacing:.14em;margin:2.6rem 0 1rem;display:flex;align-items:center;gap:.6rem}.sec-label::before{content:"";width:18px;height:1px;background:var(--accent)}
+  .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
+  .bcard{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);cursor:pointer;transition:.18s;display:flex;flex-direction:column}
+  .bcard:hover{border-color:var(--accent-2);transform:translateY(-3px)}
+  .bcard .tile{aspect-ratio:16/10;background:linear-gradient(135deg,#1b2a3f,#11324a)}
+  .bcard:nth-child(2) .tile{background:linear-gradient(135deg,#2a1b3f,#3a1a4a)}
+  .bcard:nth-child(3) .tile{background:linear-gradient(135deg,#1b3f2f,#1a4a3a)}
+  .bcard .pad{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.45rem}
+  .bcard .mta{font-family:var(--mono);font-size:.72rem;color:var(--muted);display:flex;gap:.5rem;align-items:center}
+  .lang{font-family:var(--mono);font-size:.66rem;border:1px solid var(--line);border-radius:4px;padding:.04rem .32rem}.lang.en{color:var(--accent-2);border-color:#2c3f6b}.lang.es{color:var(--warn);border-color:#5b4422}
+  .bcard h3{font-size:1.08rem;font-weight:600;line-height:1.25}
+  .readmore{font-family:var(--mono);font-size:.76rem;color:var(--accent)}
+  /* editorial reading sheet */
+  .reading{margin-left:var(--side);padding:2.4rem clamp(1rem,4vw,3rem) 3rem;justify-content:center}
+  .sheet{background:#f6f1e7;color:#211d18;width:100%;max-width:760px;border-radius:8px;padding:clamp(1.8rem,5vw,4rem) clamp(1.5rem,5vw,4.5rem);box-shadow:0 24px 70px rgba(0,0,0,.5);font-family:var(--serif);font-size:1.16rem;line-height:1.75}
+  .sheet .back{font-family:var(--mono);font-size:.76rem;color:#9c3b2a;display:inline-block;margin-bottom:1.8rem;cursor:pointer}
+  .sheet .pk{font-family:var(--mono);font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:#9c3b2a;display:block;margin-bottom:.7rem}
+  .sheet h1{font-family:var(--display);font-weight:500;font-size:clamp(2rem,5vw,3rem);line-height:1.04;color:#1c1a17;margin-bottom:.7rem}
+  .sheet .meta{font-family:var(--sans);font-size:.85rem;color:#857a68;display:flex;gap:.7rem;align-items:center;border-bottom:1px solid #d8cdb8;padding-bottom:1.3rem;margin-bottom:1.8rem}
+  .sheet .meta .l{font-family:var(--mono);font-size:.68rem;border:1px solid #c9bda3;border-radius:4px;padding:.05rem .4rem;color:#9c3b2a}
+  .sheet .body>p:first-of-type::first-letter{font-family:var(--display);float:left;font-size:3.6rem;line-height:.78;padding:.12rem .5rem 0 0;color:#9c3b2a}
+  .sheet .body p{margin-bottom:1.15rem}
+  .sheet .body h2{font-family:var(--display);font-weight:500;font-size:1.55rem;color:#1c1a17;margin:2rem 0 .7rem}
+  .sheet .body ol{margin:0 0 1.15rem 1.4rem}.sheet .body li{margin-bottom:.4rem}
+  .sheet .body blockquote{border-left:3px solid #9c3b2a;background:#efe8da;padding:.6rem 1.2rem;margin:1.6rem 0;font-style:italic;color:#4a4339}
+  .flag{position:fixed;bottom:12px;right:12px;background:var(--accent);color:#06211b;font-family:var(--mono);font-weight:600;font-size:.7rem;padding:.4rem .7rem;border-radius:6px;z-index:40}
+  @media(max-width:820px){:root{--side:0px}.sidebar{display:none}.main,.reading{margin-left:0}.blog-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<aside class="sidebar">
+  <div class="sb-logo"><span class="br">&lt;</span>JFR<span class="br">/&gt;</span></div>
+  <div class="sb-who"><b>J. Fernando Fajardo-Rojas</b>Postdoctoral Fellow · Mines</div>
+  <nav class="sb-nav" id="nav">
+    <button data-v="home" class="active"><span class="ix">00</span> Home</button>
+    <button data-v="home"><span class="ix">01</span> About</button>
+    <button data-v="home"><span class="ix">02</span> Research</button>
+    <button data-v="home"><span class="ix">03</span> Publications</button>
+    <button data-v="home"><span class="ix">04</span> News</button>
+    <button data-v="blog"><span class="ix">05</span> Blog &amp; Reseñas</button>
+    <button data-v="home"><span class="ix">06</span> Photos</button>
+    <button data-v="home"><span class="ix">07</span> CV</button>
+    <button data-v="home"><span class="ix">08</span> Contact</button>
+  </nav>
+  <div class="sb-foot"><span class="dot"></span>available for collaboration</div>
+</aside>
+
+<!-- HOME -->
+<div class="main view active" id="home">
+  <div class="hero">
+    <div class="tag">// computational materials science · ai/ml</div>
+    <h1>Designing materials with <span class="grad">data &amp; simulation</span>.</h1>
+    <p>The site identity (this dark "Lab" theme). Click <b>Blog &amp; Reseñas</b> in the sidebar to see how an individual written entry opens.</p>
+    <div class="btns"><button class="btn solid" onclick="show('blog')">Open the blog →</button></div>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="n">12+</div><div class="l">Papers</div></div>
+    <div class="stat"><div class="n">2</div><div class="l">PhDs</div></div>
+    <div class="stat"><div class="n">MOF</div><div class="l">Free-energy ML</div></div>
+    <div class="stat"><div class="n">EN/ES</div><div class="l">Two languages</div></div>
+  </div>
+</div>
+
+<!-- BLOG LIST -->
+<div class="main view" id="blog">
+  <div class="crumb">~ / <b>blog</b></div>
+  <h1 class="title">Blog &amp; Reseñas</h1>
+  <p class="lead">Lab-styled cards. Click a card to open the editorial reading view.</p>
+  <div class="blog-grid" style="margin-top:1.4rem">
+    <div class="bcard" onclick="show('post')"><div class="tile"></div><div class="pad"><div class="mta"><span class="lang en">EN</span> opinion · Jun 20</div><h3>Why data efficiency is the real bottleneck in materials ML</h3><span class="readmore">Read →</span></div></div>
+    <div class="bcard" onclick="show('post')"><div class="tile"></div><div class="pad"><div class="mta"><span class="lang es">ES</span> reseña · May 12</div><h3>«El gen» de Siddhartha Mukherjee</h3><span class="readmore">Read →</span></div></div>
+    <div class="bcard" onclick="show('post')"><div class="tile"></div><div class="pad"><div class="mta"><span class="lang en">EN</span> essay · soon</div><h3>Writing scientific software that outlives the paper</h3><span class="readmore">Read →</span></div></div>
+  </div>
+</div>
+
+<!-- POST (editorial) -->
+<div class="reading view" id="post">
+  <article class="sheet">
+    <span class="back" onclick="show('blog')">← All writing</span>
+    <span class="pk">Opinion</span>
+    <h1>Why data efficiency is the real bottleneck in materials ML</h1>
+    <div class="meta"><span>June 20, 2026</span><span class="l">EN</span></div>
+    <div class="body">
+      <p>Most headlines about machine learning celebrate scale: more parameters, more data, more compute. In materials science, that framing quietly misleads us. Our datasets are not big — they are <em>expensive</em>.</p>
+      <p>A single high-fidelity calculation or a careful synthesis can cost days of work, so the binding constraint is rarely the model. It is how much we can learn per data point.</p>
+      <h2>Three levers that move the needle</h2>
+      <ol>
+        <li><strong>Physically grounded representations</strong> reduce what the model must learn from scratch.</li>
+        <li><strong>Transfer and active learning</strong> beat collecting data blindly.</li>
+        <li><strong>Honest uncertainty</strong> is worth more to an experimentalist than one extra point of accuracy.</li>
+      </ol>
+      <blockquote>If we optimize for data efficiency, AI stops being a spectator and becomes a collaborator that guides the next experiment.</blockquote>
+      <p>That, to me, is the version of the field worth building.</p>
+    </div>
+  </article>
+</div>
+
+<div class="flag">PREVIEW · final blend</div>
+<script>
+  function show(v){
+    document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===v));
+    document.querySelectorAll('#nav button').forEach(b=>b.classList.toggle('active',b.dataset.v===v||(v==='post'&&b.dataset.v==='blog')));
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.getElementById('nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)show(b.dataset.v)});
+</script>
+</body>
+</html>

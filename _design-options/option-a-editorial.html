@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Option A — Editorial · J. Fernando Fajardo-Rojas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Source+Serif+4:ital,wght@0,400;0,500;1,400&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f6f1e7; --paper-2:#efe8da; --ink:#211d18; --ink-soft:#4a4339;
+    --muted:#857a68; --accent:#9c3b2a; --accent-2:#1f4d3f; --line:#d8cdb8;
+    --serif:"Source Serif 4",Georgia,serif; --display:"Fraunces",Georgia,serif;
+    --sans:"Source Sans 3",system-ui,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--serif);font-size:18px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 2rem}
+
+  /* Banner / masthead */
+  header.masthead{border-bottom:2px solid var(--ink);background:var(--paper)}
+  .masthead-top{display:flex;justify-content:space-between;align-items:baseline;padding:.6rem 0;border-bottom:1px solid var(--line);font-family:var(--sans);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .brand{text-align:center;padding:1.4rem 0 1rem}
+  .brand h1{font-family:var(--display);font-weight:500;font-size:clamp(1.8rem,4.4vw,3.1rem);letter-spacing:.01em;font-optical-sizing:auto}
+  .brand .sub{font-family:var(--sans);font-size:.74rem;letter-spacing:.34em;text-transform:uppercase;color:var(--accent);margin-top:.5rem}
+  nav.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:.2rem;border-top:1px solid var(--line);padding:.3rem 0}
+  nav.tabs button{background:none;border:none;cursor:pointer;font-family:var(--display);font-size:1rem;color:var(--ink-soft);padding:.55rem .95rem;position:relative;transition:color .2s}
+  nav.tabs button:hover{color:var(--accent)}
+  nav.tabs button.active{color:var(--accent)}
+  nav.tabs button.active::after{content:"";position:absolute;left:.95rem;right:.95rem;bottom:.25rem;height:2px;background:var(--accent)}
+
+  main{min-height:60vh}
+  .page{display:none;animation:fade .5s ease}
+  .page.active{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+  .kicker{font-family:var(--sans);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:block;margin-bottom:.6rem}
+  .page-title{font-family:var(--display);font-weight:500;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin-bottom:1rem}
+  .lead{font-size:1.22rem;color:var(--ink-soft);max-width:62ch}
+  .rule{height:1px;background:var(--line);margin:2.4rem 0}
+
+  /* Home */
+  .hero{display:grid;grid-template-columns:1.4fr .9fr;gap:3rem;align-items:center;padding:3.4rem 0 2.6rem}
+  .hero .eyebrow{font-family:var(--sans);font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+  .hero h2{font-family:var(--display);font-weight:500;font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.02;margin:.6rem 0 1.2rem}
+  .hero h2 em{font-style:italic;color:var(--accent)}
+  .hero p{font-size:1.15rem;color:var(--ink-soft);max-width:46ch}
+  .portrait{aspect-ratio:4/5;border:1px solid var(--line);background:
+     linear-gradient(135deg,var(--paper-2),#e7dcc6);display:flex;align-items:flex-end;justify-content:center;position:relative;box-shadow:14px 14px 0 var(--paper-2)}
+  .portrait span{font-family:var(--display);font-size:4rem;color:#c9bda3;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+  .portrait small{font-family:var(--sans);font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:.6rem;background:var(--paper);border:1px solid var(--line);margin-bottom:-.7rem}
+  .home-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:2px solid var(--ink);border-bottom:1px solid var(--line)}
+  .home-cols div{padding:1.4rem 1.4rem 1.6rem;border-right:1px solid var(--line)}
+  .home-cols div:last-child{border-right:none}
+  .home-cols h3{font-family:var(--display);font-weight:500;font-size:1.15rem;margin-bottom:.4rem}
+  .home-cols p{font-size:.96rem;color:var(--ink-soft)}
+  .home-cols .n{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;color:var(--accent)}
+
+  /* drop cap for about */
+  .prose{columns:2;column-gap:2.6rem;font-size:1.04rem}
+  .prose p{margin-bottom:1rem;break-inside:avoid}
+  .prose p:first-of-type::first-letter{font-family:var(--display);float:left;font-size:3.6rem;line-height:.8;padding:.1rem .5rem 0 0;color:var(--accent)}
+
+  /* Research */
+  .feat{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:2px solid var(--ink)}
+  .feat article{padding:1.8rem;border-bottom:1px solid var(--line);border-right:1px solid var(--line)}
+  .feat article:nth-child(2n){border-right:none}
+  .feat .num{font-family:var(--display);font-style:italic;font-size:1.6rem;color:var(--accent)}
+  .feat h3{font-family:var(--display);font-weight:500;font-size:1.35rem;margin:.3rem 0 .6rem}
+  .feat p{font-size:1rem;color:var(--ink-soft)}
+  .feat .tags{margin-top:.9rem;font-family:var(--sans);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+
+  /* Publications */
+  .pub{display:grid;grid-template-columns:64px 1fr;gap:1.4rem;padding:1.3rem 0;border-bottom:1px solid var(--line)}
+  .pub .yr{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--accent)}
+  .pub h3{font-family:var(--serif);font-weight:500;font-size:1.12rem;line-height:1.35}
+  .pub .auth{font-size:.95rem;color:var(--ink-soft);margin:.25rem 0}
+  .pub .ven{font-family:var(--sans);font-size:.82rem;color:var(--muted);font-style:normal}
+  .pub a.link{font-family:var(--sans);font-size:.76rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:1px}
+
+  /* Blog */
+  .feature-post{display:grid;grid-template-columns:1.1fr .9fr;gap:2.4rem;align-items:center;padding:1.5rem 0 2rem;border-bottom:2px solid var(--ink);margin-bottom:1.8rem}
+  .feature-post .tile{aspect-ratio:5/4;background:linear-gradient(135deg,#e7dcc6,#cdbfa1)}
+  .feature-post .cat{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+  .feature-post h3{font-family:var(--display);font-weight:500;font-size:2rem;line-height:1.08;margin:.5rem 0}
+  .post-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.8rem}
+  .post-card .tile{aspect-ratio:3/2;background:linear-gradient(135deg,#ece2cf,#d8c8a8);margin-bottom:.8rem}
+  .post-card .cat{font-family:var(--sans);font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+  .post-card h4{font-family:var(--display);font-weight:500;font-size:1.2rem;line-height:1.2;margin:.3rem 0}
+  .post-card .meta,.feature-post .meta{font-family:var(--sans);font-size:.76rem;color:var(--muted)}
+  .badge{font-family:var(--sans);font-size:.64rem;border:1px solid var(--line);padding:.05rem .35rem;letter-spacing:.05em;color:var(--muted)}
+
+  /* Photos */
+  .gallery{columns:3 200px;column-gap:1rem}
+  .gallery .ph{break-inside:avoid;margin-bottom:1rem;aspect-ratio:var(--r,1);background:var(--g);position:relative}
+  .gallery .ph cap,.gallery .ph .cap{position:absolute;left:0;right:0;bottom:0;font-family:var(--sans);font-size:.72rem;color:#fff;padding:1.4rem .6rem .5rem;background:linear-gradient(to top,rgba(0,0,0,.55),transparent)}
+
+  /* Contact */
+  .contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem;border-top:2px solid var(--ink);padding-top:2rem}
+  .contact h3{font-family:var(--display);font-weight:500;font-size:1.4rem;margin-bottom:.4rem}
+  .contact a.big{font-family:var(--display);font-style:italic;font-size:1.5rem;color:var(--accent);text-decoration:none}
+
+  footer{border-top:2px solid var(--ink);margin-top:3rem;padding:1.6rem 0;font-family:var(--sans);font-size:.76rem;letter-spacing:.04em;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.6rem}
+
+  .section{padding:2.8rem 0}
+  @media(max-width:860px){
+    .hero,.feat,.contact,.feature-post{grid-template-columns:1fr}
+    .home-cols,.post-row{grid-template-columns:1fr}
+    .home-cols div{border-right:none;border-bottom:1px solid var(--line)}
+    .prose{columns:1}
+    .portrait{order:-1;max-width:280px}
+  }
+  .demo-flag{position:fixed;bottom:12px;right:12px;background:var(--ink);color:var(--paper);font-family:var(--sans);font-size:.7rem;letter-spacing:.1em;padding:.4rem .7rem;border-radius:2px;opacity:.85}
+</style>
+</head>
+<body>
+<header class="masthead">
+  <div class="wrap">
+    <div class="masthead-top">
+      <span>Golden, Colorado</span>
+      <span>Computational Materials Science</span>
+      <span>Est. MMXXVI</span>
+    </div>
+  </div>
+  <div class="brand">
+    <h1>J. Fernando Fajardo-Rojas</h1>
+    <div class="sub">Postdoctoral Fellow — Colorado School of Mines</div>
+  </div>
+  <div class="wrap">
+    <nav class="tabs" id="tabs">
+      <button data-p="home" class="active">Home</button>
+      <button data-p="about">About</button>
+      <button data-p="research">Research</button>
+      <button data-p="pubs">Publications</button>
+      <button data-p="news">News</button>
+      <button data-p="blog">Blog &amp; Reseñas</button>
+      <button data-p="photos">Photos</button>
+      <button data-p="cv">CV</button>
+      <button data-p="contact">Contact</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- HOME -->
+  <section class="page active" id="home">
+    <div class="hero">
+      <div>
+        <span class="eyebrow">AI/ML for Materials &amp; Chemical Engineering</span>
+        <h2>Designing materials with <em>data</em>, intuition &amp; simulation.</h2>
+        <p>I build data-driven approaches—informed by multi-fidelity data—to uncover structure–property relationships and accelerate the materials design cycle.</p>
+      </div>
+      <div class="portrait"><span>JFR</span><small>Portrait</small></div>
+    </div>
+    <div class="home-cols">
+      <div><span class="n">№ 01</span><h3>Research</h3><p>Physico-chemical representations, transfer &amp; active learning, interpretable AI.</p></div>
+      <div><span class="n">№ 02</span><h3>Writing</h3><p>Essays, opinions, and book reseñas—in English and Spanish.</p></div>
+      <div><span class="n">№ 03</span><h3>Photographs</h3><p>Light from the lab, the Front Range, and the Andes.</p></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="page section" id="about">
+    <span class="kicker">About</span>
+    <h2 class="page-title">A note on the work</h2>
+    <div class="rule"></div>
+    <div class="prose">
+      <p>I am a postdoctoral researcher at the Colorado School of Mines, working in the Toberer Group. My research sits at the intersection of ML/AI, molecular simulation, and experimental characterization.</p>
+      <p>I earned a PhD in Materials Science from Mines in 2025 under Diego Gómez-Gualdrón, developing computational workflows to accelerate the discovery of materials for energy applications.</p>
+      <p>Previously, I received a PhD in (Chemical) Engineering from Universidad de los Andes in Colombia, working with Oscar Alvarez and Diego Pradilla on the experimental characterization of interfacial phenomena.</p>
+      <p>I envision a future where AI-powered tools unlock data-driven guided experimentation—transforming how we discover solutions for energy and sustainability.</p>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section class="page section" id="research">
+    <span class="kicker">Research</span>
+    <h2 class="page-title">Four directions</h2>
+    <p class="lead">Harnessing AI and machine learning where data is scarce or costly.</p>
+    <div class="rule"></div>
+    <div class="feat">
+      <article><div class="num">i.</div><h3>Physico-Chemical Representations</h3><p>Integrating domain knowledge into material representations for robust, interpretable models.</p><div class="tags">Feature engineering · Domain knowledge</div></article>
+      <article><div class="num">ii.</div><h3>Transfer &amp; Active Learning</h3><p>Minimizing the need for large labeled datasets—crucial where data generation is expensive.</p><div class="tags">Transfer · Active learning</div></article>
+      <article><div class="num">iii.</div><h3>Interpretable AI</h3><p>Models that uncover structure–property relationships for hypothesis-driven design.</p><div class="tags">Explainable AI · Structure-property</div></article>
+      <article><div class="num">iv.</div><h3>Accelerated Discovery</h3><p>Tools enabling AI-guided experimentation for functional energy materials.</p><div class="tags">Automation · High-throughput</div></article>
+    </div>
+  </section>
+
+  <!-- PUBLICATIONS -->
+  <section class="page section" id="pubs">
+    <span class="kicker">Publications</span>
+    <h2 class="page-title">Selected papers</h2>
+    <div class="rule"></div>
+    <div class="pub"><div class="yr">’26</div><div><h3>Two-dimensional interaction parameter histograms as a versatile nanoporous material representation for ML prediction of adsorption</h3><p class="auth">T. G. de Vilas*, <strong>F. Fajardo-Rojas</strong>*, O. Mansurova, E. Toberer, D. A. Gómez-Gualdrón</p><p class="ven">Mol. Syst. Des. Eng., 2026</p><br><a class="link" href="#">Read paper</a></div></div>
+    <div class="pub"><div class="yr">’26</div><div><h3>Machine learning to design metal–organic frameworks: progress &amp; challenges from a data efficiency perspective</h3><p class="auth">D. Gómez-Gualdrón, T. G. de Vilas, K. Ardila, <strong>F. Fajardo-Rojas</strong>, A. Pak</p><p class="ven">Mater. Horiz., 2026, 13, 1694–1715</p><br><a class="link" href="#">Read review</a></div></div>
+    <div class="pub"><div class="yr">’25</div><div><h3>Highly accurate and fast prediction of MOF free energy via machine learning</h3><p class="auth">A. Rubungo*, <strong>F. Fajardo-Rojas</strong>*, D. A. Gómez-Gualdrón, A. Dieng</p><p class="ven">J. Am. Chem. Soc., 2025, 147, 48035–48045</p><br><a class="link" href="#">Read paper</a></div></div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="page section" id="news">
+    <span class="kicker">Highlights</span>
+    <h2 class="page-title">News</h2>
+    <div class="rule"></div>
+    <div class="pub"><div class="yr">Jun</div><div><span class="badge">Paper</span><h3 style="margin-top:.4rem">New paper in Molecular Systems Design &amp; Engineering</h3><p class="auth">2D interaction-parameter histograms as a versatile nanoporous-material representation.</p></div></div>
+    <div class="pub"><div class="yr">Mar</div><div><span class="badge">Review</span><h3 style="margin-top:.4rem">Review out in Materials Horizons</h3><p class="auth">ML to design MOFs from a data-efficiency perspective.</p></div></div>
+    <div class="pub"><div class="yr">Aug</div><div><span class="badge">Milestone</span><h3 style="margin-top:.4rem">Started postdoc at the Toberer Group</h3><p class="auth">AI/ML for materials discovery and agentic orchestration.</p></div></div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="page section" id="blog">
+    <span class="kicker">Writing</span>
+    <h2 class="page-title">Blog &amp; Reseñas</h2>
+    <div class="rule"></div>
+    <div class="feature-post">
+      <div><span class="cat">Opinion · EN</span><h3>Why data efficiency is the real bottleneck in materials ML</h3><p class="meta">June 20, 2026 — 4 min read</p><p style="margin-top:.6rem;color:var(--ink-soft)">Our datasets aren't big—they're expensive. The binding constraint is how much we learn per data point.</p></div>
+      <div class="tile"></div>
+    </div>
+    <div class="post-row">
+      <div class="post-card"><div class="tile"></div><span class="cat">Reseña · ES</span><h4>«El gen» de Siddhartha Mukherjee</h4><p class="meta">12 may 2026</p></div>
+      <div class="post-card"><div class="tile"></div><span class="cat">Opinion · EN</span><h4>On writing scientific software that outlives the paper</h4><p class="meta">Coming soon</p></div>
+      <div class="post-card"><div class="tile"></div><span class="cat">Essay · ES</span><h4>La belleza de los materiales porosos</h4><p class="meta">Coming soon</p></div>
+    </div>
+  </section>
+
+  <!-- PHOTOS -->
+  <section class="page section" id="photos">
+    <span class="kicker">Gallery</span>
+    <h2 class="page-title">Photographs</h2>
+    <div class="rule"></div>
+    <div class="gallery">
+      <div class="ph" style="--r:.8;--g:linear-gradient(135deg,#caa874,#7d5a32)"><div class="cap">Golden hour over the Front Range</div></div>
+      <div class="ph" style="--r:1.3;--g:linear-gradient(135deg,#8fa9a0,#3f5a4f)"><div class="cap">A quiet morning in the lab</div></div>
+      <div class="ph" style="--r:1;--g:linear-gradient(135deg,#b98a7a,#6e3b2e)"><div class="cap">Páramo light · Colombia</div></div>
+      <div class="ph" style="--r:1.2;--g:linear-gradient(135deg,#c9b98f,#867142)"></div>
+      <div class="ph" style="--r:.9;--g:linear-gradient(135deg,#9aa7b5,#4e5b6b)"></div>
+      <div class="ph" style="--r:1.1;--g:linear-gradient(135deg,#cdb39a,#8a6a4d)"></div>
+    </div>
+  </section>
+
+  <!-- CV -->
+  <section class="page section" id="cv">
+    <span class="kicker">Curriculum Vitae</span>
+    <h2 class="page-title">A short timeline</h2>
+    <div class="rule"></div>
+    <div class="pub"><div class="yr">Now</div><div><h3>Postdoctoral Researcher</h3><p class="ven">Colorado School of Mines · Toberer Group</p><p class="auth">AI/ML for materials discovery &amp; agentic orchestration.</p></div></div>
+    <div class="pub"><div class="yr">’25</div><div><h3>PhD, Materials Science</h3><p class="ven">Colorado School of Mines</p><p class="auth">Advisor: Diego Gómez-Gualdrón.</p></div></div>
+    <div class="pub"><div class="yr">’—</div><div><h3>PhD, (Chemical) Engineering</h3><p class="ven">Universidad de los Andes, Colombia</p><p class="auth">Advisors: Oscar Alvarez &amp; Diego Pradilla.</p></div></div>
+    <p style="margin-top:1.6rem"><a class="link" href="#" style="font-family:var(--sans);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)">Download full CV (PDF)</a></p>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="page section" id="contact">
+    <span class="kicker">Contact</span>
+    <h2 class="page-title">Let's connect</h2>
+    <p class="lead">Interested in collaboration, or just want to talk materials and ML? I'd love to hear from you.</p>
+    <div class="rule"></div>
+    <div class="contact">
+      <div><h3>Email</h3><a class="big" href="mailto:jfajardorojas@mines.edu">jfajardorojas@mines.edu</a><p style="margin-top:1.2rem;color:var(--muted)">Colorado School of Mines · Golden, CO, USA</p></div>
+      <div><h3>Elsewhere</h3><p style="color:var(--ink-soft)">Google Scholar · ORCID · GitHub · LinkedIn · CvLac</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span>© MMXXVI J. Fernando Fajardo-Rojas</span>
+  <span>Option A — “Editorial” · a design preview</span>
+</footer>
+
+<div class="demo-flag">PREVIEW · Option A</div>
+
+<script>
+  const tabs=document.getElementById('tabs');
+  const pages=document.querySelectorAll('.page');
+  tabs.addEventListener('click',e=>{
+    const b=e.target.closest('button'); if(!b)return;
+    const id=b.dataset.p;
+    tabs.querySelectorAll('button').forEach(x=>x.classList.toggle('active',x===b));
+    pages.forEach(p=>p.classList.toggle('active',p.id===id));
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+</script>
+</body>
+</html>

@@ -97,28 +97,37 @@ bundle exec jekyll serve
 
 ## 🗂️ Project structure
 
+The site is **multi-page**: every tab is its own URL (e.g. `/research/`, `/blog/`),
+sharing one sidebar, layout, and stylesheet.
+
 ```
 _config.yml              Site-wide settings (title, URL, blog options)
-_layouts/                Page templates
-  default.html             shared shell (head + nav + footer)
-  post.html                blog post template
-_includes/               Reusable pieces: head.html, nav.html, footer.html
+_layouts/
+  default.html             shared shell: sidebar + topbar + footer
+  post.html                editorial reading view for a single blog post
+_includes/               head.html, nav.html (sidebar), footer.html
 _data/
   news.yml                 ← edit to add News
   photos.yml               ← edit to add Photos
 _posts/                  ← add Markdown files here for the Blog
-index.html               Home (Hero, About, Research, Latest News, Publications, CV, Contact)
-news.html  blog.html  photos.html   The three new section pages
-css/styles.css           All styling
-js/main.js               Navigation, filters, photo lightbox
+index.html               Home (hero + stats + latest news/blog)
+about.html  research.html  publications.html        Section pages
+news.html   blog.html      photos.html  cv.html  contact.html
+css/styles.css           All styling (theme variables at the top)
+js/main.js               Sidebar toggle, filters, photo lightbox
 assets/images/photos/    ← put gallery images here
 assets/images/blog/      ← optional blog cover images
 docs/CV.pdf              Your CV
+_design-options/         Design mockups (NOT published by Jekyll)
 ```
 
 ## 🎨 Design
 
-Light academic theme — navy accent (`#1a4480`), Source Serif 4 (body) and
-Source Sans 3 (headings). All colors and spacing are defined as variables at the
-top of `css/styles.css`, so you can re-theme the whole site by changing a few
-values there.
+Two coordinated looks:
+
+- **Site ("Lab"):** dark, modern, computational. Fixed left **sidebar** navigation,
+  Inter + JetBrains Mono type, teal/blue accents. Theme variables live at the top of
+  `css/styles.css` — change them once to re-skin the whole site.
+- **Blog posts ("Editorial"):** each written entry opens as a warm, serif "paper"
+  reading sheet (Fraunces + Source Serif 4) floating on the dark background, for a
+  focused, magazine-like reading experience.

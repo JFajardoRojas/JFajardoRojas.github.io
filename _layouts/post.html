@@ -1,30 +1,28 @@
 ---
 layout: default
+section: blog
 ---
-<article class="section page-section post">
-    <div class="container container-reading">
-        <a href="{{ '/blog/' | relative_url }}" class="back-link">&larr; All posts</a>
+<div class="reading page-enter">
+    <article class="sheet">
+        <a class="back" href="{{ '/blog/' | relative_url }}">&larr; All writing</a>
 
-        <header class="post-head reveal-up">
-            {% if page.category %}<span class="post-cat">{{ page.category }}</span>{% endif %}
-            <h1 class="post-title">{{ page.title }}</h1>
-            <div class="post-meta">
-                <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-                {% if page.lang %}<span class="lang-badge lang-{{ page.lang }}">{{ page.lang | upcase }}</span>{% endif %}
-                {% if page.book %}<span class="post-book">· {{ page.book }}{% if page.book_author %} — {{ page.book_author }}{% endif %}</span>{% endif %}
-            </div>
-        </header>
+        {% if page.category %}<span class="post-kicker">{{ page.category }}</span>{% endif %}
+        <h1 class="post-title">{{ page.title }}</h1>
 
-        {% if page.cover %}
-        <img class="post-cover reveal-up" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">
-        {% endif %}
+        <div class="post-meta">
+            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+            {% if page.lang %}<span class="e-lang">{{ page.lang | upcase }}</span>{% endif %}
+            {% if page.book %}<span class="e-book">{{ page.book }}{% if page.book_author %} — {{ page.book_author }}{% endif %}</span>{% endif %}
+        </div>
 
-        <div class="post-body reveal-up">
+        {% if page.cover %}<img class="e-cover" src="{{ page.cover | relative_url }}" alt="{{ page.title }}">{% endif %}
+
+        <div class="post-body">
             {{ content }}
         </div>
 
         <footer class="post-foot">
-            <a href="{{ '/blog/' | relative_url }}" class="btn btn-outline">&larr; Back to the blog</a>
+            <a class="e-btn" href="{{ '/blog/' | relative_url }}">&larr; Back to the blog</a>
         </footer>
-    </div>
-</article>
+    </article>
+</div>
