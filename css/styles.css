@@ -90,6 +90,11 @@ img{max-width:100%;display:block}
 .stat .n{font-family:var(--mono);font-size:1.6rem;font-weight:700;color:var(--accent)}
 .stat .l{font-size:.82rem;color:var(--txt-soft)}
 
+/* Hero looping video (ML <-> MOF) */
+.hero-media{margin:2.4rem 0 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#0c0f14;position:relative;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.hero-video{display:block;width:100%;height:auto;aspect-ratio:1600/600}
+.hero-media-cap{font-family:var(--mono);font-size:.74rem;color:var(--muted);padding:.6rem .9rem;border-top:1px solid var(--line);background:var(--bg-2)}
+
 /* ---------- Cards ---------- */
 .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
 .cards.cols-1{grid-template-columns:1fr}

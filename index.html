@@ -16,12 +16,14 @@ section: home
         </div>
     </section>
 
-    <div class="stats">
-        <div class="stat"><div class="n">12+</div><div class="l">Peer-reviewed papers</div></div>
-        <div class="stat"><div class="n">2</div><div class="l">PhDs · Mines &amp; Los Andes</div></div>
-        <div class="stat"><div class="n">MOF</div><div class="l">Free-energy ML &amp; MOFMinE</div></div>
-        <div class="stat"><div class="n">EN/ES</div><div class="l">Writing in two languages</div></div>
-    </div>
+    <figure class="hero-media">
+        <video class="hero-video" autoplay loop muted playsinline preload="auto"
+               poster="{{ '/assets/video/mof_ml_poster.jpg' | relative_url }}"
+               aria-label="Animation: machine learning linking materials structure and chemical process design">
+            <source src="{{ '/assets/video/mof_ml.mp4' | relative_url }}" type="video/mp4">
+        </video>
+        <figcaption class="hero-media-cap">// materials &harr; machine learning &harr; process design</figcaption>
+    </figure>
 
     {% if site.data.news and site.data.news.size > 0 %}
     <div class="sec-label">latest news</div>

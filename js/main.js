@@ -3,6 +3,16 @@
    Sidebar toggle · publications filter · blog filter · lightbox
    ============================================================ */
 
+// ---- Respect reduced-motion for the hero video ----
+(function () {
+  const v = document.querySelector('.hero-video');
+  if (v && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    v.removeAttribute('autoplay');
+    v.addEventListener('loadeddata', () => v.pause());
+    try { v.pause(); } catch (e) {}
+  }
+})();
+
 // ---- Mobile sidebar toggle ----
 (function () {
   const burger = document.getElementById('burger');
