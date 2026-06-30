@@ -1,49 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="J. Fernando Fajardo-Rojas - Postdoctoral Researcher in Computational Materials Science and AI/ML for Materials Discovery">
-    <meta name="keywords" content="materials science, machine learning, AI, MOF, computational chemistry, Colorado School of Mines">
-    <meta name="author" content="J. Fernando Fajardo-Rojas">
-    
-    <title>J. Fernando Fajardo-Rojas | Computational Materials Scientist</title>
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
-    <link rel="stylesheet" href="css/styles.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚛️</text></svg>">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo"><span class="logo-bracket">&lt;</span>JFR<span class="logo-bracket">/&gt;</span></a>
-            
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#research" class="nav-link">Research</a></li>
-                <li><a href="#publications" class="nav-link">Publications</a></li>
-                <li><a href="#cv" class="nav-link">CV</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            
-            <div class="nav-actions">
-                <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
+---
+layout: default
+title: Home
+---
 
     <!-- Hero Section -->
     <section id="home" class="hero">
@@ -56,8 +14,8 @@
                     <span class="title-line"></span>
                 </div>
                 <p class="hero-tagline reveal-up delay-3">
-                    Computational Materials Science <span class="separator">•</span> 
-                    AI/ML for Materials and Chemical Engineering <span class="separator">•</span> 
+                    Computational Materials Science <span class="separator">•</span>
+                    AI/ML for Materials and Chemical Engineering <span class="separator">•</span>
                     Interfacial Phenomena
                 </p>
                 <div class="hero-cta reveal-up delay-4">
@@ -67,7 +25,7 @@
             </div>
             <div class="hero-visual reveal-scale delay-2">
                 <div class="profile-frame">
-                    <img src="assets/images/profile.jpg" alt="J. Fernando Fajardo-Rojas" class="profile-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 240%22><rect fill=%22%23f0f0ee%22 width=%22200%22 height=%22240%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2248%22 font-family=%22Georgia,serif%22>JFR</text></svg>'">
+                    <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="J. Fernando Fajardo-Rojas" class="profile-image" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 240%22><rect fill=%22%23f0f0ee%22 width=%22200%22 height=%22240%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23666%22 font-size=%2248%22 font-family=%22Georgia,serif%22>JFR</text></svg>'">
                 </div>
             </div>
         </div>
@@ -80,28 +38,28 @@
                 <span class="title-number">01.</span>
                 About Me
             </h2>
-            
+
             <div class="about-content">
                 <div class="about-text reveal-up delay-1">
                     <p class="about-intro">
-                        I am a <strong>postdoctoral researcher</strong> at the <strong>Colorado School of Mines</strong>, 
+                        I am a <strong>postdoctoral researcher</strong> at the <strong>Colorado School of Mines</strong>,
                         working in the <a href="https://www.tobererlab.com/" target="_blank" rel="noopener">Toberer Group</a>.
-                        My research sits at the intersection of ML/AI, molecular simulation, and experimental characterization. 
-                        I aim to enable data-driven approaches, informed by multi-fidelity data, to build structure-property relationships, 
+                        My research sits at the intersection of ML/AI, molecular simulation, and experimental characterization.
+                        I aim to enable data-driven approaches, informed by multi-fidelity data, to build structure-property relationships,
                         guide experimental efforts, and ultimately accelerate the materials design cycle.
                     </p>
                     <p>
-                        I earned a PhD in Materials Science from Mines in 2025 under the guidance of 
-                        <a href="https://www.mines.edu/cbe/project/diego-gomez-gualdron/" target="_blank" rel="noopener">Diego Gómez-Gualdrón</a>, 
-                        where I developed computational workflows to accelerate the discovery of new materials 
+                        I earned a PhD in Materials Science from Mines in 2025 under the guidance of
+                        <a href="https://www.mines.edu/cbe/project/diego-gomez-gualdron/" target="_blank" rel="noopener">Diego Gómez-Gualdrón</a>,
+                        where I developed computational workflows to accelerate the discovery of new materials
                         for energy-related applications.
                     </p>
                     <p>
-                        Previously, I received a PhD in (Chemical) Engineering from <strong>Universidad de los Andes</strong> in Colombia, 
-                        where I worked with Oscar Alvarez and Diego Pradilla on the experimental characterization 
+                        Previously, I received a PhD in (Chemical) Engineering from <strong>Universidad de los Andes</strong> in Colombia,
+                        where I worked with Oscar Alvarez and Diego Pradilla on the experimental characterization
                         of interfacial phenomena.
                     </p>
-                    
+
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <span class="highlight-icon">🎓</span>
@@ -119,7 +77,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="about-vision reveal-up delay-2">
                     <div class="vision-card">
                         <div class="vision-header">
@@ -127,9 +85,9 @@
                             <h3>My Vision</h3>
                         </div>
                         <p>
-                            I envision a future where <strong>AI-powered tools</strong> unlock the potential of 
-                            <strong>data-driven guided experimentation</strong> to dramatically accelerate the design 
-                            cycle of functional materials—transforming how we discover solutions for 
+                            I envision a future where <strong>AI-powered tools</strong> unlock the potential of
+                            <strong>data-driven guided experimentation</strong> to dramatically accelerate the design
+                            cycle of functional materials—transforming how we discover solutions for
                             energy, sustainability, and beyond.
                         </p>
                     </div>
@@ -145,12 +103,12 @@
                 <span class="title-number">02.</span>
                 Research
             </h2>
-            
+
             <p class="section-intro reveal-up delay-1">
-                My research focuses on harnessing the power of <strong>Artificial Intelligence and Machine Learning</strong> 
+                My research focuses on harnessing the power of <strong>Artificial Intelligence and Machine Learning</strong>
                 in fields where data is scarce or costly.
             </p>
-            
+
             <div class="research-grid">
                 <article class="research-card reveal-up delay-1">
                     <div class="card-icon">
@@ -162,7 +120,7 @@
                     </div>
                     <h3>Physico-Chemical Material Representations</h3>
                     <p>
-                        Integrating domain knowledge and physico-chemical insights into material 
+                        Integrating domain knowledge and physico-chemical insights into material
                         representations to build more robust and interpretable ML models.
                     </p>
                     <div class="card-tags">
@@ -170,7 +128,7 @@
                         <span>Domain Knowledge</span>
                     </div>
                 </article>
-                
+
                 <article class="research-card reveal-up delay-2">
                     <div class="card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -180,7 +138,7 @@
                     </div>
                     <h3>Transfer & Active Learning</h3>
                     <p>
-                        Developing advanced training techniques to minimize the need for large labeled 
+                        Developing advanced training techniques to minimize the need for large labeled
                         datasets—crucial for materials science where data generation is expensive.
                     </p>
                     <div class="card-tags">
@@ -188,7 +146,7 @@
                         <span>Active Learning</span>
                     </div>
                 </article>
-                
+
                 <article class="research-card reveal-up delay-3">
                     <div class="card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -198,7 +156,7 @@
                     </div>
                     <h3>Interpretable AI Models</h3>
                     <p>
-                        Creating models that uncover structure–property relationships, translating 
+                        Creating models that uncover structure–property relationships, translating
                         data into actionable insights for hypothesis-driven materials design.
                     </p>
                     <div class="card-tags">
@@ -206,7 +164,7 @@
                         <span>Structure-Property</span>
                     </div>
                 </article>
-                
+
                 <article class="research-card reveal-up delay-4">
                     <div class="card-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -224,7 +182,7 @@
                     </div>
                     <h3>Accelerated Materials Discovery</h3>
                     <p>
-                        Building tools that enable AI-guided experimentation to accelerate 
+                        Building tools that enable AI-guided experimentation to accelerate
                         the design cycle of functional materials for energy applications.
                     </p>
                     <div class="card-tags">
@@ -236,14 +194,43 @@
         </div>
     </section>
 
+    <!-- Latest News (teaser) -->
+    {% if site.data.news and site.data.news.size > 0 %}
+    <section id="news-home" class="section news-home">
+        <div class="container">
+            <h2 class="section-title reveal-up">
+                <span class="title-number">03.</span>
+                Latest News
+            </h2>
+
+            <div class="news-teaser-list">
+                {% for item in site.data.news limit:3 %}
+                <article class="news-teaser reveal-up">
+                    <div class="news-teaser-date">{{ item.date | date: "%b %Y" }}</div>
+                    <div class="news-teaser-body">
+                        {% if item.tag %}<span class="news-tag">{{ item.tag }}</span>{% endif %}
+                        <h3>{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+                        {% if item.body %}<p>{{ item.body }}</p>{% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+
+            <div class="section-more reveal-up">
+                <a href="{{ '/news/' | relative_url }}" class="btn btn-outline">View all news &rarr;</a>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
     <!-- Publications Section -->
     <section id="publications" class="section publications">
         <div class="container">
             <h2 class="section-title reveal-up">
-                <span class="title-number">03.</span>
+                <span class="title-number">04.</span>
                 Publications
             </h2>
-            
+
             <div class="publications-filter reveal-up delay-1">
                 <button class="filter-btn active" data-filter="all">All</button>
                 <button class="filter-btn" data-filter="2026">2026</button>
@@ -252,9 +239,9 @@
                 <button class="filter-btn" data-filter="2023">2023</button>
                 <button class="filter-btn" data-filter="earlier">Earlier</button>
             </div>
-            
+
             <div class="publications-list">
-                 
+
                 <!-- 2026 Publications -->
                    <article class="publication-item reveal-up" data-year="2026">
                     <div class="pub-year">2026</div>
@@ -277,7 +264,7 @@
                     </div>
                 </article>
 
-                
+
                 <article class="publication-item reveal-up" data-year="2026">
                     <div class="pub-year">2026</div>
                     <div class="pub-content">
@@ -298,7 +285,7 @@
                         </div>
                     </div>
                 </article>
-                
+
                 <!-- 2025 Publications -->
                 <article class="publication-item reveal-up" data-year="2025">
                     <div class="pub-year">2025</div>
@@ -320,7 +307,7 @@
                         </div>
                     </div>
                 </article>
-                
+
                 <article class="publication-item reveal-up" data-year="2025">
                     <div class="pub-year">2025</div>
                     <div class="pub-content">
@@ -396,7 +383,6 @@
                     </div>
                 </article>
 
-                <!-- Placeholder publications - Add your actual publications here -->
                 <article class="publication-item reveal-up" data-year="2024">
                     <div class="pub-year">2024</div>
                     <div class="pub-content">
@@ -480,7 +466,7 @@
                         </div>
                     </div>
                 </article>
-                
+
                 <article class="publication-item reveal-up" data-year="2023">
                     <div class="pub-year">2023</div>
                     <div class="pub-content">
@@ -522,7 +508,7 @@
                         </div>
                     </div>
                 </article>
-                
+
                 <article class="publication-item reveal-up" data-year="earlier">
                     <div class="pub-year">2022</div>
                     <div class="pub-content">
@@ -544,7 +530,7 @@
                     </div>
                 </article>
             </div>
-            
+
             <div class="publications-cta reveal-up">
                 <a href="https://scholar.google.com/citations?user=FpanAPQAAAAJ&hl=en" target="_blank" rel="noopener" class="btn btn-outline">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -560,10 +546,10 @@
     <section id="cv" class="section cv">
         <div class="container">
             <h2 class="section-title reveal-up">
-                <span class="title-number">04.</span>
+                <span class="title-number">05.</span>
                 Curriculum Vitae
             </h2>
-            
+
             <div class="cv-content">
                 <div class="cv-timeline reveal-up delay-1">
                     <div class="timeline-item">
@@ -575,7 +561,7 @@
                             <p>AI/ML for materials discovery and Agentic Orchestration for Materials Design</p>
                         </div>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
@@ -586,7 +572,7 @@
                             Focus: Computational workflows for materials discovery</p>
                         </div>
                     </div>
-                    
+
                     <div class="timeline-item">
                         <div class="timeline-marker"></div>
                         <div class="timeline-content">
@@ -598,7 +584,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="cv-download reveal-up delay-2">
                     <div class="download-card">
                         <div class="download-icon">
@@ -611,7 +597,7 @@
                         </div>
                         <h3>Download Full CV</h3>
                         <p>Get the complete curriculum vitae with full publication list, presentations, and awards.</p>
-                        <a href="docs/CV.pdf" class="btn btn-primary" download>
+                        <a href="{{ '/docs/CV.pdf' | relative_url }}" class="btn btn-primary" download>
                             <span>Download PDF</span>
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
@@ -629,15 +615,15 @@
     <section id="contact" class="section contact">
         <div class="container">
             <h2 class="section-title reveal-up">
-                <span class="title-number">05.</span>
+                <span class="title-number">06.</span>
                 Contact
             </h2>
-            
+
             <p class="section-intro reveal-up delay-1">
-                Interested in collaboration, have questions about my research, or just want to connect? 
+                Interested in collaboration, have questions about my research, or just want to connect?
                 I'd love to hear from you.
             </p>
-            
+
             <div class="contact-content">
                 <div class="contact-info reveal-up delay-2">
                     <div class="contact-card">
@@ -653,7 +639,7 @@
                                 <a href="mailto:jfajardorojas@mines.edu">jfajardorojas@mines.edu</a>
                             </div>
                         </div>
-                        
+
                         <div class="contact-item">
                             <div class="contact-icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -667,7 +653,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="social-links">
                         <a href="https://scholar.google.com/citations?user=FpanAPQAAAAJ&hl=en" target="_blank" rel="noopener" class="social-link" aria-label="Google Scholar">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -696,7 +682,7 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="contact-message reveal-up delay-3">
                     <a href="mailto:jfajardorojas@mines.edu" class="btn btn-primary btn-large">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -709,58 +695,3 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    J. Fernando Fajardo-Rojas
-                    <p>Computational materials science</p>
-                </div>
-                
-                <nav class="footer-nav">
-                    <a href="#home">Home</a>
-                    <a href="#about">About</a>
-                    <a href="#research">Research</a>
-                    <a href="#publications">Publications</a>
-                    <a href="#cv">CV</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-                
-                <div class="footer-social">
-                    <a href="https://scholar.google.com/citations?user=FpanAPQAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z"/>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/jfajardorojas" target="_blank" rel="noopener" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/jair-fernando-fajardo-rojas-7a791078/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                    <a href="https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000015118" target="_blank" rel="noopener" aria-label="CvLac">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" viewBox="0 0 40 20" fill="currentColor">
-                            <text x="0" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="bold">CvLac</text>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 J. Fernando Fajardo-Rojas.</p>
-                <p>Built for fun.</p>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="js/main.js"></script>
-</body>
-</html>
-

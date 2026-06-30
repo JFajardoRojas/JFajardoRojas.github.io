@@ -1,0 +1,50 @@
+---
+layout: default
+title: Photos
+permalink: /photos/
+section: photos
+description: "Photography by J. Fernando Fajardo-Rojas — a personal gallery."
+---
+
+<section class="section page-section photos-page">
+    <div class="container">
+        <header class="page-head reveal-up">
+            <span class="page-kicker">Gallery</span>
+            <h1 class="page-title">Photos</h1>
+            <p class="page-lead">A few moments I've captured — science, travel, and everyday light.</p>
+        </header>
+
+        {% if site.data.photos and site.data.photos.size > 0 %}
+        <div class="photo-grid" id="photo-grid">
+            {% for photo in site.data.photos %}
+            <figure class="photo-item reveal-up"
+                    data-full="{{ photo.src | relative_url }}"
+                    data-caption="{{ photo.caption | escape }}"
+                    data-location="{{ photo.location | escape }}">
+                <img src="{{ photo.src | relative_url }}" alt="{{ photo.caption | escape | default: 'Photograph' }}" loading="lazy"
+                     onerror="this.closest('.photo-item').classList.add('photo-missing'); this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 400 300%22><rect fill=%22%23eceae6%22 width=%22400%22 height=%22300%22/><text x=%2250%%22 y=%2250%%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 fill=%22%23999%22 font-size=%2218%22 font-family=%22sans-serif%22>add photo</text></svg>'">
+                {% if photo.caption or photo.location %}
+                <figcaption>
+                    {% if photo.caption %}<span class="photo-caption">{{ photo.caption }}</span>{% endif %}
+                    {% if photo.location %}<span class="photo-loc">{{ photo.location }}</span>{% endif %}
+                </figcaption>
+                {% endif %}
+            </figure>
+            {% endfor %}
+        </div>
+        {% else %}
+        <p class="empty-state">No photos yet — gallery coming soon.</p>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">&lsaquo;</button>
+    <figure class="lightbox-figure">
+        <img src="" alt="" id="lightbox-img">
+        <figcaption id="lightbox-caption"></figcaption>
+    </figure>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">&rsaquo;</button>
+</div>

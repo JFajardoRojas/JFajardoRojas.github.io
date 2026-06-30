@@ -1,0 +1,54 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+section: blog
+description: "Essays, opinions, and book reviews (reseñas) by J. Fernando Fajardo-Rojas."
+---
+
+<section class="section page-section blog-page">
+    <div class="container">
+        <header class="page-head reveal-up">
+            <span class="page-kicker">Writing</span>
+            <h1 class="page-title">Blog &amp; Reseñas</h1>
+            <p class="page-lead">Essays and opinions on science and beyond, plus book reviews. Written in English and Spanish.</p>
+        </header>
+
+        <div class="blog-filter reveal-up delay-1">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="opinion">Opinion</button>
+            <button class="filter-btn" data-filter="reseña">Reseñas</button>
+            <span class="filter-divider"></span>
+            <button class="filter-btn" data-lang-filter="en">EN</button>
+            <button class="filter-btn" data-lang-filter="es">ES</button>
+        </div>
+
+        {% if site.posts.size > 0 %}
+        <div class="blog-list">
+            {% for post in site.posts %}
+            <article class="blog-card reveal-up" data-cat="{{ post.category }}" data-lang="{{ post.lang }}">
+                {% if post.cover %}
+                <a class="blog-card-media" href="{{ post.url | relative_url }}">
+                    <img src="{{ post.cover | relative_url }}" alt="{{ post.title }}" loading="lazy">
+                </a>
+                {% endif %}
+                <div class="blog-card-body">
+                    <div class="blog-card-meta">
+                        {% if post.category %}<span class="post-cat">{{ post.category }}</span>{% endif %}
+                        {% if post.lang %}<span class="lang-badge lang-{{ post.lang }}">{{ post.lang | upcase }}</span>{% endif %}
+                        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+                    </div>
+                    <h2 class="blog-card-title"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+                    {% if post.book %}<p class="blog-card-book">{{ post.book }}{% if post.book_author %} — {{ post.book_author }}{% endif %}</p>{% endif %}
+                    <p class="blog-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 32 }}</p>
+                    <a class="read-more" href="{{ post.url | relative_url }}">Read more &rarr;</a>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        <p class="empty-state filter-empty" hidden>No posts match this filter.</p>
+        {% else %}
+        <p class="empty-state">No posts yet — the first one is coming soon.</p>
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,39 @@
+# ============================================================
+#  Site configuration
+#  (Change values here once; they apply across the whole site)
+# ============================================================
+title: "J. Fernando Fajardo-Rojas"
+tagline: "Computational Materials Scientist"
+description: "J. Fernando Fajardo-Rojas — Postdoctoral Researcher in Computational Materials Science and AI/ML for Materials Discovery."
+author: "J. Fernando Fajardo-Rojas"
+email: "jfajardorojas@mines.edu"
+
+url: "https://jfajardorojas.github.io"
+baseurl: ""
+
+# ---- Blog settings ----------------------------------------
+# Posts live in the _posts/ folder. Excerpts use the first paragraph.
+excerpt_separator: "<!--more-->"
+permalink: /blog/:year/:month/:title/
+
+# ---- Build settings ---------------------------------------
+markdown: kramdown
+highlighter: rouge
+timezone: America/Denver
+
+# Files/folders Jekyll should NOT copy into the built site
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .sass-cache
+  - node_modules
+
+# Default front-matter so you can omit "layout:" in blog posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"

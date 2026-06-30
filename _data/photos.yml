@@ -1,0 +1,24 @@
+# ============================================================
+#  PHOTO GALLERY
+#  To add a photo:
+#    1) Drop the image file in  assets/images/photos/
+#    2) Copy a block below and edit it. Newest first looks best.
+#  Fields:  src (required, path under the site root)
+#           caption (optional), location (optional),
+#           date (optional, YYYY-MM-DD)
+# ============================================================
+
+- src: /assets/images/photos/sample-1.jpg
+  caption: "Golden hour over the Front Range"
+  location: "Golden, Colorado"
+  date: 2026-05-30
+
+- src: /assets/images/photos/sample-2.jpg
+  caption: "A quiet morning in the lab"
+  location: "Colorado School of Mines"
+  date: 2026-04-18
+
+- src: /assets/images/photos/sample-3.jpg
+  caption: "Páramo light"
+  location: "Cundinamarca, Colombia"
+  date: 2026-01-07

@@ -1,0 +1,40 @@
+---
+layout: default
+title: News
+permalink: /news/
+section: news
+description: "News and highlights — papers, talks, awards, and milestones from J. Fernando Fajardo-Rojas."
+---
+
+<section class="section page-section news-page">
+    <div class="container">
+        <header class="page-head reveal-up">
+            <span class="page-kicker">Highlights</span>
+            <h1 class="page-title">News</h1>
+            <p class="page-lead">Papers, talks, awards, and milestones — newest first.</p>
+        </header>
+
+        {% if site.data.news and site.data.news.size > 0 %}
+        <ol class="news-timeline">
+            {% for item in site.data.news %}
+            <li class="news-entry reveal-up">
+                <div class="news-entry-marker"></div>
+                <div class="news-entry-date">
+                    <span class="news-day">{{ item.date | date: "%d %b" }}</span>
+                    <span class="news-yr">{{ item.date | date: "%Y" }}</span>
+                </div>
+                <div class="news-entry-content">
+                    {% if item.tag %}<span class="news-tag">{{ item.tag }}</span>{% endif %}
+                    <h2 class="news-entry-title">
+                        {% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}
+                    </h2>
+                    {% if item.body %}<p>{{ item.body }}</p>{% endif %}
+                </div>
+            </li>
+            {% endfor %}
+        </ol>
+        {% else %}
+        <p class="empty-state">No news yet — check back soon.</p>
+        {% endif %}
+    </div>
+</section>
