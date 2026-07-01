@@ -7,25 +7,37 @@
 #           link (optional URL)
 # ============================================================
 
-- date: 2026-06-15
+- date: 2026-06-24
+  tag: Invited Talk
+  title: "Accelerating Quantum Materials Discovery Workshop"
+  body: "\"Physics-based representations for data-efficient ML in MOF screening.\""
+  link: "https://id4.mines.edu/quantum-materials-workshop/"
+
+- date: 2026-06-01
   tag: Paper
   title: "New paper in Molecular Systems Design & Engineering"
   body: "Our work on 2D interaction-parameter histograms as a versatile nanoporous-material representation for ML prediction of adsorption is now an Advance Article."
   link: "https://pubs.rsc.org/en/content/articlelanding/2026/me/d6me00034g"
 
-- date: 2026-03-10
+- date: 2026-01-07
+  tag: Paper
+  title: "New paper in Chemistry of Materials"
+  body: "Interactions of Common Synthesis Solvents with MOFs Studied via Free Energies of Solvation: Implications on Stability and Polymorph Selection."
+  link: "https://pubs.acs.org/doi/full/10.1021/acs.chemmater.5c01410"
+
+- date: 2025-12-04
   tag: Review
   title: "Review out in Materials Horizons"
   body: "\"Machine learning to design metal–organic frameworks: progress and challenges from a data efficiency perspective.\""
   link: "https://pubs.rsc.org/en/content/articlelanding/2026/mh/d5mh01467k"
 
-- date: 2025-12-20
+- date: 2025-12-16
   tag: Paper
   title: "JACS paper on fast ML prediction of MOF free energy"
   body: "Highly accurate and fast prediction of MOF free energy via machine learning — with the MOFMinE database released openly."
   link: "https://doi.org/10.1021/jacs.5c13960"
 
-- date: 2025-08-01
+- date: 2025-09-15
   tag: Milestone
   title: "Started postdoctoral position at the Toberer Group"
   body: "Joined the Colorado School of Mines as a postdoctoral researcher, working on AI/ML for materials discovery and agentic orchestration for materials design."
