@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Full-resolution photo originals (kept locally, not published)
+assets/images/photos/originals_fullres/
+
+# Jekyll build output
+_site/
+.jekyll-cache/
+.jekyll-metadata
