@@ -12,34 +12,34 @@
 # --- Rocky Mountain National Park, Colorado — September 2025 ---
 
 - src: /assets/images/photos/DSC_1270.JPG
-  caption: "Still water and a burning forest of pines — an alpine lake holding the sky"
-  location: "Rocky Mountain National Park, Colorado (?)"
+  caption: "An alpine lake holding the sky"
+  location: "Rocky Mountain National Park, Colorado"
   date: 2025-09-06
 
 - src: /assets/images/photos/DSC_1225.JPG
-  caption: "The flat granite brow of Hallett Peak framed by subalpine firs"
-  location: "Rocky Mountain National Park, Colorado (?)"
+  caption: "The flat granite brow of Hallett Peak"
+  location: "Rocky Mountain National Park, Colorado"
   date: 2025-09-06
 
 - src: /assets/images/photos/DSC_1159.JPG
-  caption: "Lily pads drifting across Nymph Lake, a fir branch leaning into frame"
-  location: "Nymph Lake, Rocky Mountain National Park, Colorado (?)"
+  caption: "Lily pads drifting across Nymph Lake"
+  location: "Nymph Lake, Rocky Mountain National Park, Colorado"
   date: 2025-09-06
 
 - src: /assets/images/photos/DSC_1151.JPG
-  caption: "A golden-mantled ground squirrel pauses on a tangle of exposed roots"
-  location: "Rocky Mountain National Park, Colorado (?)"
+  caption: "A squirrel pauses on a tangle of exposed roots"
+  location: "Rocky Mountain National Park, Colorado"
   date: 2025-09-06
 
 # --- Garden of the Gods, Colorado — July 2024 ---
 
 - src: /assets/images/photos/DSC_1080.JPG
-  caption: "Red sandstone fins rising out of the green, Pikes Peak country behind"
+  caption: "Red sandstone fins rising out of the green"
   location: "Garden of the Gods, Colorado Springs, Colorado"
   date: 2024-07-13
 
 - src: /assets/images/photos/DSC_1057.JPG
-  caption: "Balancing act — weathered sandstone poised against a summer sky"
+  caption: "Sandstone between pines"
   location: "Garden of the Gods, Colorado Springs, Colorado"
   date: 2024-07-13
 
@@ -51,13 +51,13 @@
 # --- San Francisco, California — June 2024 ---
 
 - src: /assets/images/photos/DSC_1011.JPG
-  caption: "A western gull banks overhead against a clean blue sky"
-  location: "San Francisco, California (?)"
+  caption: "A gull across a clean blue sky"
+  location: "San Francisco, California"
   date: 2024-06-09
 
 - src: /assets/images/photos/DSC_0922.JPG
-  caption: "The Golden Gate Bridge slipping into a bank of coastal fog"
-  location: "Golden Gate Bridge, San Francisco, California"
+  caption: "The Golden Gate Bridge"
+  location: "San Francisco, California"
   date: 2024-06-09
 
 - src: /assets/images/photos/DSC_0894.JPG
@@ -66,40 +66,40 @@
   date: 2024-06-09
 
 - src: /assets/images/photos/DSC_0895.JPG
-  caption: "Paper birds take flight — street signs and murals of North Beach"
+  caption: "Books take flight"
   location: "Broadway & Columbus, San Francisco, California"
   date: 2024-06-09
 
 - src: /assets/images/photos/DSC_0873.JPG
-  caption: "A quiet dining alley waiting for the evening crowd"
-  location: "San Francisco, California (?)"
+  caption: "A quiet dining alley"
+  location: "San Francisco, California"
   date: 2024-06-09
 
 - src: /assets/images/photos/DSC_0867.JPG
-  caption: "A pride flag and a copper dome peeking through summer sycamore leaves"
-  location: "San Francisco, California (?)"
+  caption: "A copper dome peeking through summer sky"
+  location: "San Francisco, California"
   date: 2024-06-09
 
 - src: /assets/images/photos/DSC_0849.JPG
-  caption: "Looking up a downtown tower, flowers spilling from the awning"
-  location: "San Francisco, California (?)"
+  caption: "Looking up a downtown tower"
+  location: "San Francisco, California"
   date: 2024-06-09
 
 # --- Golden, Colorado — June 2024 ---
 
 - src: /assets/images/photos/DSC_0813.JPG
-  caption: "Golden laid out below the foothills, seen from the cliffs above town"
-  location: "Golden, Colorado (?)"
+  caption: "Golden laid out below the foothills"
+  location: "Golden, Colorado"
   date: 2024-06-04
 
 # --- March 2024 ---
 
 - src: /assets/images/photos/DSC_0161.JPG
-  caption: "Midcentury stained glass catching the afternoon light"
-  location: "Colorado (?)"
+  caption: "MINES window catching the afternoon light"
+  location: "Golden, Colorado"
   date: 2024-03-21
 
 - src: /assets/images/photos/DSC_0155.JPG
-  caption: "Concrete geometry against a hard blue sky — lines, light, and negative space"
-  location: "Colorado (?)"
+  caption: "Concrete geometry against a hard blue sky"
+  location: "Golden, Colorado"
   date: 2024-03-21
