@@ -4,27 +4,30 @@ title: Home
 section: home
 ---
 <section class="hero">
-    <div class="wrap hero-grid">
-        <div>
-            <span class="eyebrow">Computational materials science · Machine learning</span>
-            <h1>Accelerating the discovery of materials for <em>gas adsorption</em>, and next, <span class="next-word">catalysis</span>.</h1>
-            <p class="lead">I combine molecular simulation, physics-informed representations and
-               data-efficient machine learning to find porous materials that perform well
-               and that can actually be made.</p>
-            <div class="btns">
-                <a class="btn primary" href="{{ '/research/' | relative_url }}">Explore the research <span class="arrow">→</span></a>
-                <a class="btn" href="{{ '/publications/' | relative_url }}">Publications</a>
-                <a class="btn" href="{{ '/docs/CV.pdf' | relative_url }}">CV (PDF)</a>
-            </div>
-            <div class="hero-affil">
-                <strong>{{ site.position }}</strong> · {{ site.group }}<br>
-                {{ site.department }} · {{ site.institution }}
-            </div>
-        </div>
+    <div class="wrap">
+        <span class="eyebrow">Computational materials science · Machine learning</span>
+        <h1 class="hero-title">Accelerating the discovery of materials for <em>gas adsorption</em>, and next, <span class="next-word">catalysis</span>.</h1>
 
-        <figure class="hero-portrait">
-            <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Portrait of J. Fernando Fajardo-Rojas">
-        </figure>
+        <div class="hero-row">
+            <div>
+                <p class="lead">I combine molecular simulation, physics-informed representations and
+                   data-efficient machine learning to find porous materials that perform well
+                   and that can actually be made.</p>
+                <div class="btns">
+                    <a class="btn primary" href="{{ '/research/' | relative_url }}">Explore the research <span class="arrow">→</span></a>
+                    <a class="btn" href="{{ '/publications/' | relative_url }}">Publications</a>
+                    <a class="btn" href="{{ '/docs/CV.pdf' | relative_url }}">CV (PDF)</a>
+                </div>
+                <div class="hero-affil">
+                    <strong>{{ site.position }}</strong> · {{ site.group }}<br>
+                    {{ site.department }} · {{ site.institution }}
+                </div>
+            </div>
+
+            <figure class="hero-portrait">
+                <img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Portrait of J. Fernando Fajardo-Rojas">
+            </figure>
+        </div>
     </div>
 </section>
 
