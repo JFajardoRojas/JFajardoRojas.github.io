@@ -8,3 +8,6 @@ assets/images/photos/originals_fullres/
 _site/
 .jekyll-cache/
 .jekyll-metadata
+
+# Previews saved by Claude (not part of the site)
+Claude outputs/

@@ -43,6 +43,7 @@ exclude:
   - vendor
   - .sass-cache
   - node_modules
+  - Claude outputs
   # Hidden sections (remove these lines to bring them back)
   - blog.html
   - photos.html
