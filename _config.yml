@@ -29,6 +29,11 @@ exclude:
   - vendor
   - .sass-cache
   - node_modules
+  # Hidden sections (remove these lines to bring them back)
+  - blog.html
+  - photos.html
+  - assets/images/photos
+  - assets/images/blog
 
 # Default front-matter so you can omit "layout:" in blog posts
 defaults:
@@ -37,3 +42,4 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      published: false   # blog hidden; delete this line to republish posts

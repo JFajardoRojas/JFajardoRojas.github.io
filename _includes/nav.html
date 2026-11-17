@@ -9,10 +9,12 @@
         <a href="{{ '/research/'    | relative_url }}" class="{% if s == 'research' %}active{% endif %}"><span class="ix">02</span> Research</a>
         <a href="{{ '/publications/'| relative_url }}" class="{% if s == 'publications' %}active{% endif %}"><span class="ix">03</span> Publications</a>
         <a href="{{ '/news/'        | relative_url }}" class="{% if s == 'news' %}active{% endif %}"><span class="ix">04</span> News</a>
+        {%- comment -%} Hidden: blog & photos (site kept scientific-only)
         <a href="{{ '/blog/'        | relative_url }}" class="{% if s == 'blog' %}active{% endif %}"><span class="ix">05</span> Blog &amp; Reseñas</a>
         <a href="{{ '/photos/'      | relative_url }}" class="{% if s == 'photos' %}active{% endif %}"><span class="ix">06</span> Photos</a>
-        <a href="{{ '/cv/'          | relative_url }}" class="{% if s == 'cv' %}active{% endif %}"><span class="ix">07</span> CV</a>
-        <a href="{{ '/contact/'     | relative_url }}" class="{% if s == 'contact' %}active{% endif %}"><span class="ix">08</span> Contact</a>
+        {%- endcomment -%}
+        <a href="{{ '/cv/'          | relative_url }}" class="{% if s == 'cv' %}active{% endif %}"><span class="ix">05</span> CV</a>
+        <a href="{{ '/contact/'     | relative_url }}" class="{% if s == 'contact' %}active{% endif %}"><span class="ix">06</span> Contact</a>
     </nav>
 
     <div class="sb-foot">
