@@ -12,7 +12,8 @@ Pushing to `main` publishes the site (usually within 1–2 minutes).
 | Show a paper on the home page | add `selected: true` to it |
 | Add news | `_data/news.yml` (any order; sorted by date automatically) |
 | Research text | `research.html` |
-| Bio | `about.html` and the "About" strip in `index.html` |
+| Bio (home page) | `index.html` |
+| Research images | `assets/images/research/` (swap in your own figures, same file names) |
 | CV PDF | replace `docs/CV.pdf` |
 | Discovery-loop labels and captions | `STEPS` at the top of `js/discovery-loop.js` |
 
@@ -32,8 +33,10 @@ _data/publications.yml   all publications
 _data/news.yml           news items
 _includes/               head (SEO), header/nav, footer
 _layouts/default.html    page shell
-index.html               home: hero + discovery loop, research themes, bio, selected papers, news
-research.html  publications.html  about.html  news.html  cv.html  contact.html
+index.html               home: intro panel, portrait, bio, latest news
+research.html            discovery loop + four research themes
+publications.html  news.html  cv.html  contact.html
+about.html               redirects to the home page
 css/styles.css           all styles (colors at the top)
 js/main.js               mobile menu, publication filter, scroll reveal
 js/discovery-loop.js     interactive hero visual

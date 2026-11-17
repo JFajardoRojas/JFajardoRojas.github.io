@@ -4,80 +4,71 @@ title: Research
 section: research
 permalink: /research/
 description: "Research of J. Fernando Fajardo-Rojas: physics-informed representations, data-efficient machine learning and stability predictions to accelerate the discovery of porous materials for gas adsorption, and next, catalysis."
+scripts:
+  - /js/discovery-loop.js
 ---
-<section class="page-head">
-    <div class="wrap">
-        <span class="eyebrow">Research</span>
-        <h1>Finding better porous materials, faster</h1>
-        <p class="lead">From gas capture and separation today to catalysis next: simulation, physics-informed
-           machine learning and stability predictions working as one discovery loop.</p>
+<section class="hero">
+    <div class="wrap hero-grid research-top">
+        <div>
+            <span class="eyebrow">Research</span>
+            <h1>Finding better porous materials, faster</h1>
+            <p class="lead">Porous materials such as metal–organic frameworks can be built in millions of
+               combinations, far more than can be simulated or made. My work turns that search into a loop:
+               simulate a few, learn from them, choose the next ones wisely, and keep only materials that can exist.</p>
+            <p class="muted">The same loop, built for gas adsorption, is the starting point for catalysis.</p>
+        </div>
+
+        <div class="loop" id="discovery-loop" data-mode="adsorption">
+            <div class="loop-top">
+                <span class="loop-title">The discovery loop</span>
+                <div class="loop-switch" role="group" aria-label="Application">
+                    <button type="button" data-mode="adsorption" aria-pressed="true">Gas adsorption</button>
+                    <button type="button" data-mode="catalysis" aria-pressed="false">Catalysis<span class="tagnext">next</span></button>
+                </div>
+            </div>
+            <div class="loop-canvas"></div>
+            <div class="loop-caption" aria-live="polite">
+                <b>A closed loop for discovering adsorbents.</b> Simulate, represent, learn, select, validate.
+            </div>
+            <noscript>
+                <ol>
+                    <li>Simulate: molecular simulation of adsorption.</li>
+                    <li>Represent: physics-informed material fingerprints.</li>
+                    <li>Learn: data-efficient machine learning.</li>
+                    <li>Select: active learning picks the next candidates.</li>
+                    <li>Validate: stability and synthesizability.</li>
+                </ol>
+            </noscript>
+        </div>
     </div>
 </section>
 
 <section class="section">
-    <div class="wrap mission reveal">
-        <div>
-            <p>Metal–organic frameworks and related porous materials can be assembled from building blocks in
-               millions of combinations. That makes them ideal for separating and storing gases, and
-               increasingly attractive as catalysts. It also makes them impossible to explore one by one:
-               only a small fraction can be simulated, and far fewer can be made.</p>
-            <p>My work builds the pieces needed to search this space efficiently: representations that
-               encode the physics of adsorption, learning strategies that need little data, and stability
-               predictions that keep the search anchored to materials that can exist.</p>
-        </div>
-        <ul class="pillars">
-            <li><span>Simulate</span>Grand canonical Monte Carlo, molecular dynamics, free-energy calculations</li>
-            <li><span>Represent</span>Physics-informed descriptors of host–guest interactions</li>
-            <li><span>Learn</span>Active, transfer and multi-fidelity machine learning</li>
-            <li><span>Validate</span>Thermodynamic stability, solvent effects, synthesis knowledge from the literature</li>
-        </ul>
-    </div>
-</section>
-
-<section class="section" style="padding-top:0">
     <div class="wrap">
 
-        <article class="rthrust reveal" id="representations">
-            <div class="rthrust-side">
+        <article class="rrow reveal" id="representations">
+            <figure class="rimg"><img src="{{ '/assets/images/research/representations.svg' | relative_url }}" alt="A guest molecule inside a framework pore and the histogram that summarizes its interactions"></figure>
+            <div>
                 <div class="num">01</div>
                 <h2>Representations that carry physics</h2>
-                <p class="q">What does a model need to know about a pore to predict what it will adsorb?</p>
-            </div>
-            <div class="rthrust-main">
-                <p>Most machine-learning models for porous materials describe geometry: pore size, surface area,
-                   atom types. Adsorption, however, is governed by how a guest molecule interacts with the
-                   framework. I develop representations built from that physics, such as two-dimensional
-                   histograms of interaction parameters that summarize how strongly, and how often, a framework
-                   can interact with guest molecules.</p>
-                <p>Because they come from the same quantities used in molecular simulation, these representations
-                   are simple to compute, apply across very different materials and adsorbates, and give models a
-                   physically meaningful starting point.</p>
-                <div class="chips"><span class="chip">host–guest interactions</span><span class="chip">interaction histograms</span><span class="chip">transferable features</span></div>
-                <h4>Key papers</h4>
+                <p>Adsorption depends on how a guest molecule interacts with the framework, not only on pore
+                   geometry. I build representations from that physics, such as two-dimensional histograms of
+                   interaction parameters, which are simple to compute and work across materials and gases.</p>
                 <ul class="keypapers">
                     <li><a href="https://doi.org/10.1039/D6ME00034G" target="_blank" rel="noopener">Two-dimensional interaction parameter histograms as a simple and versatile nanoporous material representation for machine learning prediction of adsorption properties</a><span class="ven">Mol. Syst. Des. Eng., 2026</span></li>
-                    <li><a href="https://doi.org/10.1039/D5MH01467K" target="_blank" rel="noopener">Machine learning to design metal–organic frameworks: progress and challenges from a data efficiency perspective</a><span class="ven">Mater. Horiz., 2026 · Review</span></li>
+                    <li><a href="https://doi.org/10.1039/D5MH01467K" target="_blank" rel="noopener">Machine learning to design metal–organic frameworks: progress and challenges from a data efficiency perspective</a><span class="ven">Mater. Horiz., 2026</span></li>
                 </ul>
             </div>
         </article>
 
-        <article class="rthrust reveal" id="data-efficiency">
-            <div class="rthrust-side">
+        <article class="rrow reveal" id="data-efficiency">
+            <figure class="rimg"><img src="{{ '/assets/images/research/data-efficiency.svg' | relative_url }}" alt="Candidate materials in a design space; a few points chosen by active learning move toward the best region"></figure>
+            <div>
                 <div class="num">02</div>
                 <h2>Learning from less data</h2>
-                <p class="q">How few simulations does it take to map a whole design space?</p>
-            </div>
-            <div class="rthrust-main">
-                <p>A single adsorption simulation is affordable; screening thousands of materials across many
-                   gases, pressures and temperatures is not. I use active learning to decide which simulations
-                   are worth running, and transfer learning to reuse what a model learned on one property or
-                   molecule for another.</p>
-                <p>With alchemical adsorption simulations, one model can learn across families of
-                   &ldquo;virtual&rdquo; guest molecules, a step toward a universal adsorption model. In
-                   hierarchical screening workflows, iterative machine learning focuses expensive calculations
-                   on the most promising candidates.</p>
-                <div class="chips"><span class="chip">active learning</span><span class="chip">transfer learning</span><span class="chip">high-throughput screening</span></div>
-                <h4>Key papers</h4>
+                <p>Screening thousands of materials across many gases and conditions is expensive, even with
+                   simulation. Active and transfer learning decide which simulations to run and reuse what models
+                   already know, moving toward a universal adsorption model.</p>
                 <ul class="keypapers">
                     <li><a href="https://doi.org/10.1039/D4SC02156H" target="_blank" rel="noopener">Active learning of alchemical adsorption simulations: towards a universal adsorption model</a><span class="ven">Chem. Sci., 2024</span></li>
                     <li><a href="https://doi.org/10.1021/acsami.4c11396" target="_blank" rel="noopener">MOFs to enhance green NH₃ synthesis in plasma reactors: hierarchical computational screening enhanced by iterative machine learning</a><span class="ven">ACS Appl. Mater. Interfaces, 2024</span></li>
@@ -85,23 +76,16 @@ description: "Research of J. Fernando Fajardo-Rojas: physics-informed representa
             </div>
         </article>
 
-        <article class="rthrust reveal" id="stability">
-            <div class="rthrust-side">
+        <article class="rrow reveal" id="stability">
+            <figure class="rimg"><img src="{{ '/assets/images/research/stability.svg' | relative_url }}" alt="Free-energy landscape with three framework polymorphs; the most stable sits in the deepest well"></figure>
+            <div>
                 <div class="num">03</div>
                 <h2>From predicted to makeable</h2>
-                <p class="q">Of all the materials a model likes, which ones can actually exist?</p>
-            </div>
-            <div class="rthrust-main">
-                <p>A record-setting adsorbent is only useful if it can be synthesized and remains stable. I compute
-                   free energies of metal–organic frameworks to quantify thermodynamic stability, and study how
-                   functional groups and synthesis solvents shift it, including which polymorph is likely to form.
-                   Machine learning then predicts these free energies in a fraction of the time.</p>
-                <p>To connect predictions with how materials are really made, we use expert-guided large
-                   language models to extract synthesis procedures, step by step, from the literature.</p>
-                <div class="chips"><span class="chip">free energy</span><span class="chip">polymorph selection</span><span class="chip">LLM literature mining</span></div>
-                <h4>Key papers</h4>
+                <p>A great adsorbent only matters if it can be made and stays intact. Free-energy calculations,
+                   accelerated with machine learning, tell us which frameworks are stable; expert-guided language
+                   models read synthesis procedures from the literature to connect predictions with the lab.</p>
                 <ul class="keypapers">
-                    <li><a href="https://doi.org/10.1021/jacs.5c13960" target="_blank" rel="noopener">Highly accurate and fast prediction of MOF free energy via machine learning</a><span class="ven">J. Am. Chem. Soc., 2025 · with the open MOFMinE database</span></li>
+                    <li><a href="https://doi.org/10.1021/jacs.5c13960" target="_blank" rel="noopener">Highly accurate and fast prediction of MOF free energy via machine learning</a><span class="ven">J. Am. Chem. Soc., 2025</span></li>
                     <li><a href="https://doi.org/10.1021/acs.chemmater.5c00129" target="_blank" rel="noopener">Data-driven insights on the impact of functionalization on metal–organic framework free energies</a><span class="ven">Chem. Mater., 2025</span></li>
                     <li><a href="https://doi.org/10.1021/acs.chemmater.5c01410" target="_blank" rel="noopener">Interactions of common synthesis solvents with MOFs studied via free energies of solvation</a><span class="ven">Chem. Mater., 2026</span></li>
                     <li><a href="https://doi.org/10.26434/chemrxiv-2025-x90hc" target="_blank" rel="noopener">Expert-guided LLM approach for sequence-aware extraction of MOF synthesis</a><span class="ven">ChemRxiv, 2025</span></li>
@@ -109,57 +93,17 @@ description: "Research of J. Fernando Fajardo-Rojas: physics-informed representa
             </div>
         </article>
 
-        <article class="rthrust next reveal" id="catalysis">
-            <div class="rthrust-side">
+        <article class="rrow next reveal" id="catalysis">
+            <figure class="rimg"><img src="{{ '/assets/images/research/catalysis.svg' | relative_url }}" alt="Reactants entering a framework pore, binding at an active site and leaving as products"></figure>
+            <div>
                 <div class="num">NEXT</div>
                 <h2>Toward catalysis</h2>
-                <p class="q">If we can predict what a pore binds, can we predict what it transforms?</p>
-            </div>
-            <div class="rthrust-main">
                 <p>Adsorption is the first step of every catalytic cycle, and the confinement that makes a pore
-                   selective also shapes reactivity. The next stage of my work extends the discovery loop to
-                   catalytic materials: descriptors of active sites in their pore environment, machine-learned
-                   potentials that describe binding beyond physisorption, and the same emphasis on data
-                   efficiency and on stability under reaction conditions.</p>
-                <p>Earlier collaborations already point in this direction: computational screening of MOFs for
-                   plasma-assisted green ammonia synthesis, and a first-principles look at how the Pd–PdO phase
-                   transformation changes H₂O₂ synthesis and decomposition pathways.</p>
-                <div class="chips"><span class="chip">active sites</span><span class="chip">confinement</span><span class="chip">ML potentials</span><span class="chip">chemisorption</span></div>
-                <h4>Foundations</h4>
-                <ul class="keypapers">
-                    <li><a href="https://doi.org/10.1021/acsami.4c11396" target="_blank" rel="noopener">MOFs to enhance green NH₃ synthesis in plasma reactors</a><span class="ven">ACS Appl. Mater. Interfaces, 2024</span></li>
-                    <li><a href="https://doi.org/10.1039/D3CY00404J" target="_blank" rel="noopener">Theoretical assessments of Pd–PdO phase transformation and its impacts on H₂O₂ synthesis and decomposition pathways</a><span class="ven">Catal. Sci. Technol., 2023</span></li>
-                </ul>
-                <p class="muted" style="font-size:.9rem;margin-top:18px">Contributor to the NSF award <em>Transferable machine learning potentials to enable ML-based screening of adsorbents for separations involving chemisorption</em> (PI: D. A. Gómez-Gualdrón, 2025).</p>
+                   selective also shapes reactivity. The next step is to extend the discovery loop to catalytic
+                   materials: descriptors of active sites in their pore environment, machine-learned potentials
+                   for binding, and stability under reaction conditions.</p>
             </div>
         </article>
-    </div>
-</section>
 
-<section class="section tint">
-    <div class="wrap">
-        <div class="section-head reveal">
-            <div>
-                <span class="eyebrow">Also</span>
-                <h2>Earlier and collaborative work</h2>
-            </div>
-        </div>
-        <div class="earlier reveal">
-            <div class="box">
-                <h3>Interfaces and colloids</h3>
-                <p>Experimental PhD work at Universidad de los Andes on how asphaltenes and designed surface-active
-                   peptides organize at fluid–fluid interfaces.</p>
-            </div>
-            <div class="box">
-                <h3>Photophysics in MOFs</h3>
-                <p>Contributed to a study showing how framework topology controls singlet fission in
-                   metal–organic frameworks.</p>
-            </div>
-            <div class="box">
-                <h3>Data infrastructure</h3>
-                <p>Knowledge graphs for MOFs and visual-analytics tools for high-throughput screening and inverse design.</p>
-            </div>
-        </div>
-        <div class="btns"><a class="btn" href="{{ '/publications/' | relative_url }}">All publications <span class="arrow">→</span></a></div>
     </div>
 </section>

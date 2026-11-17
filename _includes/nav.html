@@ -14,7 +14,6 @@
         </button>
 
         <nav class="site-nav" id="site-nav" aria-label="Main">
-            <a href="{{ '/about/'        | relative_url }}" {% if s == 'about' %}aria-current="page"{% endif %}>About</a>
             <a href="{{ '/research/'     | relative_url }}" {% if s == 'research' %}aria-current="page"{% endif %}>Research</a>
             <a href="{{ '/publications/' | relative_url }}" {% if s == 'publications' %}aria-current="page"{% endif %}>Publications</a>
             <a href="{{ '/news/'         | relative_url }}" {% if s == 'news' %}aria-current="page"{% endif %}>News</a>
