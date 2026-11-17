@@ -1,43 +1,57 @@
 # ============================================================
 #  NEWS / HIGHLIGHTS
-#  To add an item: copy a block below, keep the indentation,
-#  and put it at the TOP so the newest appears first.
+#  Add a block anywhere (the site sorts by date, newest first).
 #  Fields:  date (YYYY-MM-DD), title, body (optional),
-#           tag (optional: Paper, Talk, Award, Conference...),
+#           tag (optional: Paper, Talk, Award, Teaching, Milestone...),
 #           link (optional URL)
 # ============================================================
 
 - date: 2026-06-24
-  tag: Invited Talk
-  title: "Accelerating Quantum Materials Discovery Workshop"
-  body: "\"Physics-based representations for data-efficient ML in MOF screening.\""
+  tag: Invited talk
+  title: "Accelerating Quantum Materials Discovery workshop"
+  body: "Physics-based representations for data-efficient ML in MOF screening."
   link: "https://id4.mines.edu/quantum-materials-workshop/"
 
 - date: 2026-06-01
   tag: Paper
   title: "New paper in Molecular Systems Design & Engineering"
-  body: "Our work on 2D interaction-parameter histograms as a versatile nanoporous-material representation for ML prediction of adsorption is now an Advance Article."
-  link: "https://pubs.rsc.org/en/content/articlelanding/2026/me/d6me00034g"
+  body: "2D interaction-parameter histograms as a simple, versatile representation of nanoporous materials for ML prediction of adsorption."
+  link: "https://doi.org/10.1039/D6ME00034G"
+
+- date: 2026-03-01
+  tag: Teaching
+  title: "Guest lecture: Materials and Computation for Clean Energy"
+  body: "ENGY/MEGN 598, Colorado School of Mines."
 
 - date: 2026-01-07
   tag: Paper
   title: "New paper in Chemistry of Materials"
-  body: "Interactions of Common Synthesis Solvents with MOFs Studied via Free Energies of Solvation: Implications on Stability and Polymorph Selection."
-  link: "https://pubs.acs.org/doi/full/10.1021/acs.chemmater.5c01410"
-
-- date: 2025-12-04
-  tag: Review
-  title: "Review out in Materials Horizons"
-  body: "\"Machine learning to design metal–organic frameworks: progress and challenges from a data efficiency perspective.\""
-  link: "https://pubs.rsc.org/en/content/articlelanding/2026/mh/d5mh01467k"
+  body: "How common synthesis solvents interact with MOFs, studied through free energies of solvation, and what it means for stability and polymorph selection."
+  link: "https://doi.org/10.1021/acs.chemmater.5c01410"
 
 - date: 2025-12-16
   tag: Paper
   title: "JACS paper on fast ML prediction of MOF free energy"
-  body: "Highly accurate and fast prediction of MOF free energy via machine learning — with the MOFMinE database released openly."
+  body: "Accurate, fast free-energy prediction for MOFs, released with the open MOFMinE database."
   link: "https://doi.org/10.1021/jacs.5c13960"
+
+- date: 2025-12-04
+  tag: Review
+  title: "Review in Materials Horizons"
+  body: "Machine learning to design metal–organic frameworks: progress and challenges from a data-efficiency perspective."
+  link: "https://doi.org/10.1039/D5MH01467K"
+
+- date: 2025-11-02
+  tag: Conference
+  title: "AIChE Annual Meeting, Boston"
+  body: "One oral and one poster presentation."
+
+- date: 2025-10-15
+  tag: Invited talk
+  title: "NSF Institute for Data-Driven Dynamical Design (ID4)"
+  body: "Invited presentation at the Colorado School of Mines."
 
 - date: 2025-09-15
   tag: Milestone
-  title: "Started postdoctoral position at the Toberer Group"
-  body: "Joined the Colorado School of Mines as a postdoctoral researcher, working on AI/ML for materials discovery and agentic orchestration for materials design."
+  title: "Started as a Postdoctoral Fellow in the Toberer Group"
+  body: "Department of Physics, Colorado School of Mines, with the NSF ID4 institute."

@@ -1,0 +1,143 @@
+# ============================================================
+#  PUBLICATIONS — the Publications page, the Research page and
+#  the home page all read from this file.
+#
+#  To add a paper: copy a block, put it at the TOP, and edit.
+#    title, authors, venue, year      (required)
+#    url                               main link (DOI preferred)
+#    links                             extra buttons (label + url)
+#    themes                            any of:
+#        adsorption  stability  catalysis  data  interfaces  other
+#    selected: true                    shows it on the home page
+#    equal: true                       adds the "* equal contribution" note
+#  Your name is bolded automatically when written "F. Fajardo-Rojas".
+# ============================================================
+
+- title: "Two-dimensional interaction parameter histograms as a simple and versatile nanoporous material representation for machine learning prediction of adsorption properties"
+  authors: "T. G. de Vilas*, F. Fajardo-Rojas*, O. Mansurov, R. Devaisher, E. Toberer, D. A. Gómez-Gualdrón"
+  venue: "Mol. Syst. Des. Eng., 2026, Advance Article"
+  year: 2026
+  url: "https://doi.org/10.1039/D6ME00034G"
+  themes: [adsorption]
+  equal: true
+  selected: true
+
+- title: "Machine learning to design metal–organic frameworks: progress and challenges from a data efficiency perspective"
+  authors: "D. A. Gómez-Gualdrón, T. G. de Vilas, K. Ardila, F. Fajardo-Rojas, A. Pak"
+  venue: "Mater. Horiz., 2026, 13, 1694–1715"
+  year: 2026
+  url: "https://doi.org/10.1039/D5MH01467K"
+  kind: Review
+  themes: [adsorption, stability]
+  selected: true
+
+- title: "Interactions of common synthesis solvents with MOFs studied via free energies of solvation: implications on stability and polymorph selection"
+  authors: "F. Fajardo-Rojas, R. Anderson, K. Ardila, A. Pak, D. A. Gómez-Gualdrón"
+  venue: "Chem. Mater., 2026, 38, 2, 607–618"
+  year: 2026
+  url: "https://doi.org/10.1021/acs.chemmater.5c01410"
+  themes: [stability]
+
+- title: "Highly accurate and fast prediction of MOF free energy via machine learning"
+  authors: "A. N. Rubungo*, F. Fajardo-Rojas*, D. A. Gómez-Gualdrón, A. B. Dieng"
+  venue: "J. Am. Chem. Soc., 2025, 147, 52, 48035–48045"
+  year: 2025
+  url: "https://doi.org/10.1021/jacs.5c13960"
+  links:
+    - label: "MOFMinE data"
+      url: "https://osf.io/z7nvt"
+  themes: [stability]
+  equal: true
+  selected: true
+
+- title: "Data-driven insights on the impact of functionalization on metal–organic framework free energies"
+  authors: "F. Fajardo-Rojas, R. Anderson, M. Li, R. Chang, D. A. Gómez-Gualdrón"
+  venue: "Chem. Mater., 2025, 37, 15, 5502–5514"
+  year: 2025
+  url: "https://doi.org/10.1021/acs.chemmater.5c00129"
+  links:
+    - label: "Interactive visualization"
+      url: "https://observablehq.com/@tiga1231/data_driven_insights_fun_mof_free_energy"
+  themes: [stability]
+
+- title: "AlloyLens: a visual analytics tool for high-throughput alloy screening and inverse design"
+  authors: "S. Li, F. Fajardo-Rojas, D. A. Gómez-Gualdrón, R. Chang, M. Li"
+  venue: "arXiv preprint, 2025"
+  year: 2025
+  url: "https://doi.org/10.48550/arXiv.2511.02133"
+  kind: Preprint
+  themes: [data]
+
+- title: "Expert-guided LLM approach for sequence-aware extraction of MOF synthesis"
+  authors: "X. Zhao, F. Fajardo-Rojas, J. Furst, K. Ardila, K. Langlois, Y. An, X. Hu, F. Uribe-Romo, D. A. Gómez-Gualdrón, J. Greenberg"
+  venue: "ChemRxiv preprint, 2025"
+  year: 2025
+  url: "https://doi.org/10.26434/chemrxiv-2025-x90hc"
+  kind: Preprint
+  themes: [data, stability]
+
+- title: "MOFs to enhance green NH₃ synthesis in plasma reactors: hierarchical computational screening enhanced by iterative machine learning"
+  authors: "T. W. Liu, F. Fajardo-Rojas, S. Addish, E. Martinez, D. A. Gómez-Gualdrón"
+  venue: "ACS Appl. Mater. Interfaces, 2024, 16, 49, 68506–68519"
+  year: 2024
+  url: "https://doi.org/10.1021/acsami.4c11396"
+  themes: [adsorption, catalysis]
+  selected: true
+
+- title: "Active learning of alchemical adsorption simulations: towards a universal adsorption model"
+  authors: "E. Osaro, F. Fajardo-Rojas, G. M. Cooper, D. A. Gómez-Gualdrón, Y. J. Colón"
+  venue: "Chem. Sci., 2024, 15, 17671–17684"
+  year: 2024
+  url: "https://doi.org/10.1039/D4SC02156H"
+  themes: [adsorption]
+  selected: true
+
+- title: "Framework-topology-controlled singlet fission in metal–organic frameworks"
+  authors: "S. S. Rajasree, J. Yu, F. Fajardo-Rojas, H. C. Fry, R. Anderson, X. Li, W. Xu, J. Duan, S. Goswami, K. Maindan, D. A. Gómez-Gualdrón, P. Deria"
+  venue: "J. Am. Chem. Soc., 2023, 145, 32, 17678–17688"
+  year: 2023
+  url: "https://doi.org/10.1021/jacs.3c03918"
+  themes: [other]
+
+- title: "Novel biosurfactants: rationally designed surface-active peptides and in silico evaluation at the decane–water interface"
+  authors: "J. V. Pérez-Bejarano, F. Fajardo-Rojas, O. Alvarez, J. C. Burgos, L. H. Reyes, D. Pradilla"
+  venue: "Process Biochem., 2023, 125, 84–95"
+  year: 2023
+  url: "https://doi.org/10.1016/j.procbio.2022.11.012"
+  themes: [interfaces]
+
+- title: "Theoretical assessments of Pd–PdO phase transformation and its impacts on H₂O₂ synthesis and decomposition pathways"
+  authors: "M. Vyas, F. Fajardo-Rojas, D. A. Gómez-Gualdrón, S. Kwon"
+  venue: "Catal. Sci. Technol., 2023, 13, 3828–3848"
+  year: 2023
+  url: "https://doi.org/10.1039/D3CY00404J"
+  themes: [catalysis]
+
+- title: "Exploring pre-trained language models to build knowledge graph for metal–organic frameworks (MOFs)"
+  authors: "Y. An, J. Greenberg, X. Hu, A. Kalinowski, X. Fang, X. Zhao, S. McClellan, F. Uribe-Romo, K. Langlois, J. Furst, D. A. Gómez-Gualdrón, F. Fajardo-Rojas, K. Ardila, S. K. Saikin, C. A. Harper, R. Daniel"
+  venue: "IEEE International Conference on Big Data, 2022"
+  year: 2022
+  url: "https://doi.org/10.1109/BigData55660.2022.10020568"
+  themes: [data]
+
+- title: "Building open knowledge graph for metal–organic frameworks (MOF-KG): challenges and case studies"
+  authors: "Y. An, J. Greenberg, X. Zhao, X. Hu, S. McClellan, A. Kalinowski, F. Uribe-Romo, K. Langlois, J. Furst, D. A. Gómez-Gualdrón, F. Fajardo-Rojas, K. Ardila"
+  venue: "arXiv preprint, 2022"
+  year: 2022
+  url: "https://doi.org/10.48550/arXiv.2207.04502"
+  kind: Preprint
+  themes: [data]
+
+- title: "Deviation from equilibrium thermodynamics of an asphaltene model compound during compression–expansion experiments at fluid–fluid interfaces"
+  authors: "F. Fajardo-Rojas, O. Alvarez, J. R. Samaniuk, D. Pradilla"
+  venue: "Langmuir, 2021, 37, 5, 1799–1810"
+  year: 2021
+  url: "https://doi.org/10.1021/acs.langmuir.0c03151"
+  themes: [interfaces]
+
+- title: "Probing interfacial structure and dynamics of model and natural asphaltenes at fluid–fluid interfaces"
+  authors: "F. Fajardo-Rojas, D. Pradilla, O. Alvarez, J. R. Samaniuk"
+  venue: "Langmuir, 2020, 36, 27, 7965–7979"
+  year: 2020
+  url: "https://doi.org/10.1021/acs.langmuir.0c01320"
+  themes: [interfaces]

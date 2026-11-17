@@ -2,54 +2,144 @@
 layout: default
 title: Home
 section: home
+scripts:
+  - /js/discovery-loop.js
 ---
-<div class="main page-enter">
-    <section class="hero">
-        <div class="tag">// computational materials science · ai/ml</div>
-        <h1>Designing materials with <span class="grad">data &amp; simulation</span>.</h1>
-        <p>I build data-driven approaches—informed by multi-fidelity data—to uncover
-           structure–property relationships, guide experiments, and accelerate the
-           materials design cycle.</p>
-        <div class="btns">
-            <a class="btn solid" href="{{ '/research/' | relative_url }}">Explore research →</a>
-            <a class="btn" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+<section class="hero">
+    <div class="wrap hero-grid">
+        <div>
+            <span class="eyebrow">Computational materials science · Machine learning</span>
+            <h1>Accelerating the discovery of materials for <em>gas adsorption</em>, and next, <span class="next-word">catalysis</span>.</h1>
+            <p class="lead">I combine molecular simulation, physics-informed representations and
+               data-efficient machine learning to find porous materials that perform well
+               and that can actually be made.</p>
+            <div class="btns">
+                <a class="btn primary" href="{{ '/research/' | relative_url }}">Explore the research <span class="arrow">→</span></a>
+                <a class="btn" href="{{ '/publications/' | relative_url }}">Publications</a>
+                <a class="btn" href="{{ '/docs/CV.pdf' | relative_url }}">CV (PDF)</a>
+            </div>
+            <div class="hero-affil">
+                <strong>{{ site.position }}</strong> · {{ site.group }}<br>
+                {{ site.department }} · {{ site.institution }}
+            </div>
         </div>
-    </section>
 
-    <figure class="hero-media">
-        <video class="hero-video" autoplay loop muted playsinline preload="auto"
-               poster="{{ '/assets/video/mof_ml_poster.jpg' | relative_url }}"
-               aria-label="Animation: machine learning linking materials structure and chemical process design">
-            <source src="{{ '/assets/video/mof_ml.mp4' | relative_url }}" type="video/mp4">
-        </video>
-        <figcaption class="hero-media-cap">// materials &harr; machine learning &harr; process design</figcaption>
-    </figure>
-
-    {% if site.data.news and site.data.news.size > 0 %}
-    <div class="sec-label">latest news</div>
-    <div class="cards">
-        {% for item in site.data.news limit:2 %}
-        <div class="card">
-            <div class="ic">{{ item.date | date: "%b %Y" }}{% if item.tag %} · {{ item.tag | downcase }}{% endif %}</div>
-            <h3>{{ item.title }}</h3>
-            {% if item.body %}<p>{{ item.body }}</p>{% endif %}
+        <div class="loop" id="discovery-loop" data-mode="adsorption">
+            <div class="loop-top">
+                <span class="loop-title">The discovery loop</span>
+                <div class="loop-switch" role="group" aria-label="Application">
+                    <button type="button" data-mode="adsorption" aria-pressed="true">Gas adsorption</button>
+                    <button type="button" data-mode="catalysis" aria-pressed="false">Catalysis<span class="tagnext">next</span></button>
+                </div>
+            </div>
+            <div class="loop-canvas"></div>
+            <div class="loop-caption" aria-live="polite">
+                <b>A closed loop for discovering adsorbents.</b> Simulate, represent, learn, select, validate.
+            </div>
+            <noscript>
+                <ol>
+                    <li>Simulate: molecular simulation of adsorption.</li>
+                    <li>Represent: physics-informed material fingerprints.</li>
+                    <li>Learn: data-efficient machine learning.</li>
+                    <li>Select: active learning picks the next candidates.</li>
+                    <li>Validate: stability and synthesizability.</li>
+                </ol>
+            </noscript>
         </div>
-        {% endfor %}
     </div>
-    <p style="margin-top:1rem"><a class="btn" href="{{ '/news/' | relative_url }}">All news →</a></p>
-    {% endif %}
+</section>
 
-    {% if site.posts.size > 0 %}
-    <div class="sec-label">from the blog</div>
-    <div class="cards">
-        {% for post in site.posts limit:2 %}
-        <div class="card">
-            <div class="ic">{{ post.lang | upcase }} · {{ post.category }}</div>
-            <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-            <p>{{ post.excerpt | strip_html | truncatewords: 22 }}</p>
-            <a class="cardlink" href="{{ post.url | relative_url }}">Read →</a>
+<section class="section">
+    <div class="wrap">
+        <div class="section-head reveal">
+            <div>
+                <span class="eyebrow">Research</span>
+                <h2>Three questions, one direction</h2>
+                <p>What makes a porous material good at capturing a gas, how to find it with as little
+                   data as possible, and whether it can survive being made. Then, the same tools for catalysis.</p>
+            </div>
+            <a class="more" href="{{ '/research/' | relative_url }}">All research <span class="arrow">→</span></a>
         </div>
-        {% endfor %}
+
+        <div class="thrusts">
+            <a class="thrust reveal" href="{{ '/research/#representations' | relative_url }}">
+                <svg class="thrust-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42h36"/><rect class="f" x="9" y="30" width="5" height="12" rx="1"/><rect class="f" x="17" y="18" width="5" height="24" rx="1"/><rect class="f" x="25" y="10" width="5" height="32" rx="1"/><rect class="f" x="33" y="24" width="5" height="18" rx="1"/></svg>
+                <div class="num">01</div>
+                <h3>Representations that carry physics</h3>
+                <p>Compact fingerprints of host–guest interactions that let ML models predict adsorption across many materials and gases.</p>
+                <span class="more">Read more <span class="arrow">→</span></span>
+            </a>
+            <a class="thrust reveal" href="{{ '/research/#data-efficiency' | relative_url }}">
+                <svg class="thrust-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M6 42V6M6 42h36"/><path d="M8 38c8-2 10-20 18-24s12-4 16-5"/><circle class="f" cx="14" cy="30" r="2.4"/><circle class="f" cx="22" cy="18" r="2.4"/><circle class="f" cx="33" cy="11" r="2.4"/></svg>
+                <div class="num">02</div>
+                <h3>Learning from less data</h3>
+                <p>Active and transfer learning that reach reliable predictions with far fewer expensive simulations.</p>
+                <span class="more">Read more <span class="arrow">→</span></span>
+            </a>
+            <a class="thrust reveal" href="{{ '/research/#stability' | relative_url }}">
+                <svg class="thrust-icon" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,5 40,14 40,34 24,43 8,34 8,14"/><path d="M16 24l6 6 11-12"/></svg>
+                <div class="num">03</div>
+                <h3>From predicted to makeable</h3>
+                <p>Free energies, solvent effects and literature mining to judge which predicted materials are stable and synthesizable.</p>
+                <span class="more">Read more <span class="arrow">→</span></span>
+            </a>
+            <a class="thrust next reveal" href="{{ '/research/#catalysis' | relative_url }}">
+                <svg class="thrust-icon" viewBox="0 0 48 48" aria-hidden="true"><polygon points="24,9 37,16.5 37,31.5 24,39 11,31.5 11,16.5"/><circle class="f" cx="24" cy="24" r="3.2"/><path d="M4 12l6 3M44 12l-6 3M24 47v-6"/></svg>
+                <div class="num">NEXT</div>
+                <h3>Toward catalysis</h3>
+                <p>Adsorption is the first step of every catalytic cycle. Extending these tools to binding, reactivity and stability under reaction conditions.</p>
+                <span class="more">Read more <span class="arrow">→</span></span>
+            </a>
+        </div>
     </div>
-    {% endif %}
-</div>
+</section>
+
+<section class="section tint">
+    <div class="wrap bio reveal">
+        <div class="portrait"><img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Portrait of J. Fernando Fajardo-Rojas" loading="lazy"></div>
+        <div>
+            <span class="eyebrow">About</span>
+            <p>I am a {{ site.position | downcase }} in the {{ site.group }} at the {{ site.institution }}.
+               I trained as a chemical engineer and experimentalist in Colombia, studying molecules at fluid–fluid
+               interfaces, before moving to molecular simulation and machine learning for metal–organic
+               frameworks during my PhD in Materials Science at Mines.</p>
+            <a class="more" href="{{ '/about/' | relative_url }}">More about me <span class="arrow">→</span></a>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="wrap split">
+        <div class="reveal">
+            <h2>Selected publications</h2>
+            <ul class="plist">
+                {% for p in site.data.publications %}{% if p.selected %}
+                <li>
+                    <div class="yr">{{ p.year }}</div>
+                    <div>
+                        <a class="t" href="{{ p.url }}" target="_blank" rel="noopener">{{ p.title }}</a>
+                        <div class="ven">{{ p.venue }}</div>
+                    </div>
+                </li>
+                {% endif %}{% endfor %}
+            </ul>
+            <p style="margin-top:18px"><a class="more" href="{{ '/publications/' | relative_url }}">All publications <span class="arrow">→</span></a></p>
+        </div>
+        <div class="reveal">
+            <h2>Recent news</h2>
+            {% assign news = site.data.news | sort: 'date' | reverse %}
+            <ul class="news">
+                {% for item in news limit: 4 %}
+                <li>
+                    <div class="d">{{ item.date | date: "%b %Y" }}</div>
+                    <div>
+                        {% if item.tag %}<span class="k">{{ item.tag }}</span>{% endif %}
+                        <h3>{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <p style="margin-top:18px"><a class="more" href="{{ '/news/' | relative_url }}">All news <span class="arrow">→</span></a></p>
+        </div>
+    </div>
+</section>

@@ -4,9 +4,23 @@
 # ============================================================
 title: "J. Fernando Fajardo-Rojas"
 tagline: "Computational Materials Scientist"
-description: "J. Fernando Fajardo-Rojas — Postdoctoral Researcher in Computational Materials Science and AI/ML for Materials Discovery."
+description: "J. Fernando Fajardo-Rojas — computational materials scientist using molecular simulation and data-efficient machine learning to accelerate the discovery of porous materials for gas adsorption and catalysis."
 author: "J. Fernando Fajardo-Rojas"
 email: "jfajardorojas@mines.edu"
+
+# ---- Current position (edit these when you move) -----------
+position: "Postdoctoral Fellow"
+department: "Department of Physics · Materials@Mines"
+institution: "Colorado School of Mines"
+group: "Toberer Group"
+location: "Golden, Colorado"
+office: "CoorsTek Building, Colorado School of Mines, Golden, CO 80401"
+
+# ---- Profiles ----------------------------------------------
+scholar: "https://scholar.google.com/citations?user=FpanAPQAAAAJ&hl=en"
+orcid: "https://orcid.org/0000-0002-3109-0219"
+github: "https://github.com/jfajardorojas"
+linkedin: "https://www.linkedin.com/in/jair-fernando-fajardo-rojas-7a791078/"
 
 url: "https://jfajardorojas.github.io"
 baseurl: ""
@@ -34,6 +48,8 @@ exclude:
   - photos.html
   - assets/images/photos
   - assets/images/blog
+  # Old hero video (replaced by the interactive discovery loop)
+  - assets/video
 
 # Default front-matter so you can omit "layout:" in blog posts
 defaults:

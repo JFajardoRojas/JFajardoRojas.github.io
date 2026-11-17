@@ -5,26 +5,93 @@ section: cv
 permalink: /cv/
 description: "Curriculum vitae of J. Fernando Fajardo-Rojas."
 ---
-<div class="main page-enter">
-    <div class="crumb">~ / <b>cv</b></div>
-    <h1 class="title">Curriculum Vitae</h1>
-    <p class="lead">A short timeline. The full CV with publications, talks, and awards is available as a PDF.</p>
+<section class="page-head">
+    <div class="wrap">
+        <span class="eyebrow">Curriculum vitae</span>
+        <h1>Curriculum vitae</h1>
+        <p class="lead">A summary. The full CV, with publications, presentations, mentoring and service, is available as a PDF.</p>
+        <div class="btns"><a class="btn primary" href="{{ '/docs/CV.pdf' | relative_url }}" download>Download full CV (PDF) <span class="arrow">↓</span></a></div>
+    </div>
+</section>
 
-    <div class="sec-label">experience &amp; education</div>
-    <div class="cv-row">
-        <div class="when">2025 – now</div>
-        <div><h3>Postdoctoral Researcher</h3><p class="org">Colorado School of Mines · Toberer Group</p><p>AI/ML for materials discovery and agentic orchestration for materials design.</p></div>
-    </div>
-    <div class="cv-row">
-        <div class="when">2021 – 2025</div>
-        <div><h3>PhD in Materials Science</h3><p class="org">Colorado School of Mines</p><p>Advisor: Diego Gómez-Gualdrón · Computational workflows for materials discovery.</p></div>
-    </div>
-    <div class="cv-row">
-        <div class="when">earlier</div>
-        <div><h3>PhD in (Chemical) Engineering</h3><p class="org">Universidad de los Andes, Colombia</p><p>Advisors: Oscar Alvarez &amp; Diego Pradilla · Experimental characterization of interfacial phenomena.</p></div>
-    </div>
+<section class="page-body">
+    <div class="wrap">
 
-    <div class="btns" style="margin-top:1.8rem">
-        <a class="btn solid" href="{{ '/docs/CV.pdf' | relative_url }}" download>Download full CV (PDF) ↓</a>
+        <div class="cv-sec">
+            <h2>Appointments</h2>
+            <div>
+                <div class="cv-item">
+                    <h3>{{ site.position }}, Department of Physics</h3><span class="when">2025 – present</span>
+                    <div class="org">Colorado School of Mines · NSF Institute for Data-Driven Dynamical Design (ID4)</div>
+                    <div class="det">Advisor: Eric Toberer. AI-enabled, multiscale computational workflows for predictive materials design.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-sec">
+            <h2>Education</h2>
+            <div>
+                <div class="cv-item">
+                    <h3>PhD, Materials Science</h3><span class="when">2021 – 2025</span>
+                    <div class="org">Colorado School of Mines, Golden, CO</div>
+                    <div class="det">Advisor: Diego Gómez-Gualdrón. Thesis: <em>Data-Driven Development of Metal–Organic Frameworks: Synthesizability Insights and Thermodynamic Stability Predictions</em>.</div>
+                </div>
+                <div class="cv-item">
+                    <h3>PhD, Engineering (Chemical Engineering)</h3><span class="when">2017 – 2021</span>
+                    <div class="org">Universidad de los Andes, Bogotá, Colombia</div>
+                    <div class="det">Advisors: Diego Pradilla and Oscar Alvarez. Thesis: <em>Interfacial Behavior of Natural and Model Asphaltenes: A Multi-Scale Approach</em>.</div>
+                </div>
+                <div class="cv-item">
+                    <h3>MS, Chemical Engineering</h3><span class="when">2019 – 2021</span>
+                    <div class="org">Universidad de los Andes, Bogotá, Colombia</div>
+                </div>
+                <div class="cv-item">
+                    <h3>MS, Hydrocarbon Engineering</h3><span class="when">2013 – 2016</span>
+                    <div class="org">Universidad Industrial de Santander, Bucaramanga, Colombia</div>
+                </div>
+                <div class="cv-item">
+                    <h3>BS, Chemical Engineering</h3><span class="when">2008 – 2013</span>
+                    <div class="org">Universidad Industrial de Santander, Bucaramanga, Colombia</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cv-sec">
+            <h2>Honors &amp; awards</h2>
+            <div>
+                <div class="cv-item"><h3>Excellence Award, NSF ID4 Institute</h3><span class="when">2024</span><div class="det">For academic and community contributions.</div></div>
+                <div class="cv-item"><h3>ID4 Travel Award</h3><span class="when">2024</span><div class="det">AI≡Science workshop, UC Berkeley.</div></div>
+                <div class="cv-item"><h3>Fulbright Scholarship, Colombian Doctoral Student</h3><span class="when">2018</span></div>
+                <div class="cv-item"><h3>Excellence Scholarship for Doctoral Studies, Universidad de los Andes</h3><span class="when">2017 – 2021</span></div>
+                <div class="cv-item"><h3>Ecopetrol Sponsorship for Master's Studies</h3><span class="when">2013 – 2016</span></div>
+            </div>
+        </div>
+
+        <div class="cv-sec">
+            <h2>Grants &amp; computing</h2>
+            <div>
+                <div class="cv-item"><h3>Contributor, NSF award: Transferable ML potentials for screening adsorbents in separations involving chemisorption</h3><span class="when">2025</span><div class="det">PI: Diego Gómez-Gualdrón.</div></div>
+            </div>
+        </div>
+
+        <div class="cv-sec">
+            <h2>Teaching &amp; mentoring</h2>
+            <div>
+                <div class="cv-item"><h3>Guest Lecturer, Materials and Computation for Clean Energy (ENGY/MEGN 598)</h3><span class="when">2026</span><div class="org">Colorado School of Mines</div></div>
+                <div class="cv-item"><h3>Teaching Assistant, Reaction Kinetics; Introduction to ChE; Thermodynamics</h3><span class="when">2017 – 2021</span><div class="org">Universidad de los Andes</div></div>
+                <div class="cv-item"><h3>Instructor, Thermodynamics; Transport Phenomena</h3><span class="when">2014 – 2016</span><div class="org">Universidad Industrial de Santander</div></div>
+                <div class="cv-item"><h3>Research mentor to 20 students</h3><span class="when">2014 – present</span><div class="det">Graduate, undergraduate and REU students, many now in graduate programs or industry.</div></div>
+            </div>
+        </div>
+
+        <div class="cv-sec">
+            <h2>Service</h2>
+            <div>
+                <div class="cv-item"><h3>Journal reviewer</h3><span class="when"></span><div class="det">Nature Communications, Journal of Alloys and Compounds, Scientific Reports.</div></div>
+                <div class="cv-item"><h3>Selection committee, Fulbright Commission Colombia</h3><span class="when">2022 – present</span></div>
+                <div class="cv-item"><h3>Scientific committee, Symposium on Hydrocarbon Research (UIS)</h3><span class="when">2024 – present</span></div>
+                <div class="cv-item"><h3>Thesis committee member / examiner</h3><span class="when">2022 – present</span><div class="det">Five graduate theses at Universidad de los Andes and Universidad Industrial de Santander.</div></div>
+            </div>
+        </div>
     </div>
-</div>
+</section>

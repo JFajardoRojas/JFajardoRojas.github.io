@@ -3,32 +3,60 @@ layout: default
 title: About
 section: about
 permalink: /about/
-description: "About J. Fernando Fajardo-Rojas — postdoctoral researcher in computational materials science and AI/ML."
+description: "About J. Fernando Fajardo-Rojas, computational materials scientist at the Colorado School of Mines."
 ---
-<div class="main page-enter">
-    <div class="crumb">~ / <b>about</b></div>
-    <h1 class="title">About</h1>
-    <p class="lead">Postdoctoral researcher at the Colorado School of Mines, working in the
-       Toberer Group at the intersection of ML/AI, molecular simulation, and experimental characterization.</p>
-
-    <div class="prose" style="margin-top:1.6rem">
-        <p>I aim to enable data-driven approaches, informed by multi-fidelity data, to build
-           structure–property relationships, guide experimental efforts, and ultimately
-           accelerate the materials design cycle.</p>
-        <p>I earned a PhD in Materials Science from Mines in 2025 under the guidance of
-           <a href="https://www.mines.edu/cbe/project/diego-gomez-gualdron/" target="_blank" rel="noopener">Diego Gómez-Gualdrón</a>,
-           where I developed computational workflows to accelerate the discovery of new materials
-           for energy-related applications.</p>
-        <p>Previously, I received a PhD in (Chemical) Engineering from <strong>Universidad de los Andes</strong>
-           in Colombia, where I worked with Oscar Alvarez and Diego Pradilla on the experimental
-           characterization of interfacial phenomena.</p>
+<section class="page-head">
+    <div class="wrap">
+        <span class="eyebrow">About</span>
+        <h1>J. Fernando Fajardo-Rojas</h1>
+        <p class="lead">{{ site.position }} · {{ site.group }} · {{ site.department }}, {{ site.institution }}</p>
     </div>
+</section>
 
-    <div class="sec-label">at a glance</div>
-    <div class="cards">
-        <div class="card"><div class="ic">2025–now</div><h3>Mines · Toberer Group</h3><p>AI/ML for materials discovery and agentic orchestration for materials design.</p></div>
-        <div class="card"><div class="ic">expertise</div><h3>Computational &amp; Experimental</h3><p>Molecular simulation, ML modeling, and interfacial characterization.</p></div>
-        <div class="card"><div class="ic">focus</div><h3>AI-driven discovery</h3><p>Data-efficient learning for materials where data is scarce or costly.</p></div>
-        <div class="card"><div class="ic">vision</div><h3>Guided experimentation</h3><p>AI tools that unlock data-driven experimentation for energy &amp; sustainability.</p></div>
+<section class="page-body">
+    <div class="wrap about-grid">
+        <aside>
+            <div class="portrait"><img src="{{ '/assets/images/profile.jpg' | relative_url }}" alt="Portrait of J. Fernando Fajardo-Rojas"></div>
+            <div class="idcard">
+                <div><span>Position</span>{{ site.position }}, {{ site.group }}</div>
+                <div><span>Institution</span>{{ site.institution }} · NSF ID4 Institute</div>
+                <div><span>Email</span><a href="mailto:{{ site.email }}">{{ site.email }}</a></div>
+                <div><span>Profiles</span><a href="{{ site.scholar }}" target="_blank" rel="noopener">Scholar</a> · <a href="{{ site.orcid }}" target="_blank" rel="noopener">ORCID</a> · <a href="{{ site.github }}" target="_blank" rel="noopener">GitHub</a></div>
+            </div>
+        </aside>
+
+        <div class="prose">
+            <p>I am a computational materials scientist working at the intersection of molecular simulation
+               and machine learning. My goal is to shorten the path from a promising idea to a useful porous
+               material, first for gas adsorption and separation, and next for catalysis.</p>
+            <p>I am a {{ site.position | downcase }} in the group of Eric Toberer at the {{ site.institution }},
+               within the NSF Institute for Data-Driven Dynamical Design (ID4). I earned my PhD in Materials Science
+               at Mines in 2025, advised by
+               <a href="https://www.mines.edu/cbe/project/diego-gomez-gualdron/" target="_blank" rel="noopener">Diego Gómez-Gualdrón</a>.
+               My thesis, <em>Data-Driven Development of Metal–Organic Frameworks: Synthesizability Insights and
+               Thermodynamic Stability Predictions</em>, combined free-energy calculations and machine learning to
+               ask which predicted frameworks can actually exist.</p>
+            <p>Before that, I was an experimentalist. At Universidad de los Andes in Colombia I earned a PhD in
+               Engineering with Diego Pradilla and Oscar Alvarez, studying how asphaltenes and other surface-active
+               molecules behave at fluid–fluid interfaces. I started as a chemical engineer at Universidad
+               Industrial de Santander, where I also earned an MSc in Hydrocarbon Engineering and worked on
+               reservoir simulation for enhanced oil recovery. That path, from the lab bench to the computer,
+               shapes how I build models: they should answer questions experimentalists actually have.</p>
+
+            <div class="facts">
+                <div><b>16</b><span>publications &amp; preprints</span></div>
+                <div><b>2</b><span>PhDs: Engineering (Uniandes) and Materials Science (Mines)</span></div>
+                <div><b>20</b><span>students mentored, from REU to PhD</span></div>
+            </div>
+
+            <h2>Recognition</h2>
+            <p>ID4 Excellence Award (NSF, 2024) · ID4 Travel Award (2024) · Fulbright Scholarship (2018) ·
+               Universidad de los Andes Excellence Scholarship for Doctoral Studies (2017–2021).</p>
+
+            <div class="btns">
+                <a class="btn primary" href="{{ '/cv/' | relative_url }}">Curriculum vitae <span class="arrow">→</span></a>
+                <a class="btn" href="{{ '/contact/' | relative_url }}">Get in touch</a>
+            </div>
+        </div>
     </div>
-</div>
+</section>

@@ -3,36 +3,30 @@ layout: default
 title: News
 section: news
 permalink: /news/
-description: "News and highlights — papers, talks, awards, and milestones from J. Fernando Fajardo-Rojas."
+description: "News from J. Fernando Fajardo-Rojas: papers, talks, awards and milestones."
 ---
-<div class="main page-enter">
-    <div class="crumb">~ / <b>news</b></div>
-    <h1 class="title">News</h1>
-    <p class="lead">Papers, talks, awards, and milestones — newest first.</p>
+<section class="page-head">
+    <div class="wrap">
+        <span class="eyebrow">News</span>
+        <h1>News</h1>
+        <p class="lead">Papers, talks, teaching and milestones, newest first.</p>
+    </div>
+</section>
 
-    {% if site.data.news and site.data.news.size > 0 %}
-    <div class="term" style="margin-top:1.6rem">
-        <div class="bar"><i style="background:#ff5f56"></i><i style="background:#ffbd2e"></i><i style="background:#27c93f"></i></div>
-        <div class="body">
-            {% for item in site.data.news %}
-            <div><span class="d">[{{ item.date | date: "%Y-%m-%d" }}]</span>{% if item.tag %} <span class="t">{{ item.tag | upcase }}</span>{% endif %} <span class="m">{{ item.title }}</span></div>
+<section class="page-body">
+    <div class="wrap"><div style="max-width:860px">
+        {% assign news = site.data.news | sort: 'date' | reverse %}
+        <ul class="news">
+            {% for item in news %}
+            <li>
+                <div class="d">{{ item.date | date: "%b %Y" }}</div>
+                <div>
+                    {% if item.tag %}<span class="k">{{ item.tag }}</span>{% endif %}
+                    <h3>{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
+                    {% if item.body %}<p>{{ item.body }}</p>{% endif %}
+                </div>
+            </li>
             {% endfor %}
-        </div>
-    </div>
-
-    <div class="news-list">
-        {% for item in site.data.news %}
-        <div class="news-item">
-            <div class="date">{{ item.date | date: "%d %b %Y" }}</div>
-            <div>
-                {% if item.tag %}<span class="tag">{{ item.tag }}</span>{% endif %}
-                <h3>{% if item.link %}<a href="{{ item.link }}" target="_blank" rel="noopener">{{ item.title }}</a>{% else %}{{ item.title }}{% endif %}</h3>
-                {% if item.body %}<p>{{ item.body }}</p>{% endif %}
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-    {% else %}
-    <p class="filter-empty">No news yet — check back soon.</p>
-    {% endif %}
-</div>
+        </ul>
+    </div></div>
+</section>
